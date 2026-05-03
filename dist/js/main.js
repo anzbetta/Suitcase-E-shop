@@ -1,4 +1,5 @@
 import Slider from './home.js';
+const sliders = [];
 document.addEventListener('DOMContentLoaded', () => {
     // enable CSS-based page transitions
     document.body.classList.add('page-transition');
@@ -6,8 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-slider]').forEach(root => {
         if (root.dataset.sliderDynamic === 'true')
             return;
-        const slider = new Slider(root);
-        void slider;
+        sliders.push(new Slider(root));
     });
     const header = document.querySelector('.header');
     const burgerButton = document.querySelector('.header__burger');
