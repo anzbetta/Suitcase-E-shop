@@ -1,0 +1,143 @@
+.footer {
+  background: #fff;
+  padding: 48px 0 0;
+}
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.footer__top {
+  display: flex;
+  gap: 48px;
+}
+@media (max-width: 1024px) {
+  .footer__top {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+.footer__left {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.footer__nav-groups {
+  display: flex;
+  gap: 24px;
+}
+@media (max-width: 576px) {
+  .footer__nav-groups {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.footer__nav-group {
+  flex: 1 1 0;
+  padding: 20px 24px 24px;
+}
+.footer__nav-group h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 16px;
+}
+.footer__nav-group ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.footer__nav-group ul li a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+  transition: color 0.2s ease;
+  padding: 6px 0;
+  width: 100%;
+}
+.footer__nav-group ul li a:hover {
+  color: #c0392b;
+}
+.footer__shipping {
+  padding: 20px 24px 24px;
+}
+.footer__shipping h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 12px;
+}
+.footer__shipping p {
+  font-size: 13.5px;
+  color: #555;
+  line-height: 1.7;
+}
+.footer__right {
+  width: 400px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .footer__right {
+    width: 100%;
+  }
+}
+.footer__contact-text {
+  padding: 20px 24px 24px;
+}
+.footer__contact-text h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 12px;
+}
+.footer__contact-text p {
+  font-size: 13.5px;
+  color: #555;
+  line-height: 1.7;
+}
+.footer__contact-details {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 8px;
+}
+@media (max-width: 600px) {
+  .footer__contact-details {
+    grid-template-columns: 1fr;
+  }
+}
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.footer__contact-item img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  object-fit: contain;
+}
+.footer__contact-item span {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.55;
+}
+.footer__bottom {
+  margin-top: 40px;
+  padding: 16px 24px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+.footer__bottom p {
+  font-size: 13px;
+  color: #999;
+}
+
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,75 @@
+@use './variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Set responsive heading sizes: desktop, tablet (<= $bp-md), mobile (<= $bp-sm)
+@mixin heading($desktop, $tablet: null, $mobile: null) {
+  font-size: $desktop;
+
+  @if $tablet != null {
+    @media (max-width: $bp-md) {
+      font-size: $tablet;
+    }
+  }
+
+  @if $mobile != null {
+    @media (max-width: $bp-sm) {
+      font-size: $mobile;
+    }
+  }
+}
+
+// Button mixin: background, color, padding, radius
+@mixin button($bg: $main-color, $color: #fff, $py: 12px, $px: 20px, $radius: 6px) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $py $px;
+  background: $bg;
+  color: $color;
+  border-radius: $radius;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.15s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    }
+  }
+}
+
+// Utility: truncate text with ellipsis
+@mixin truncate($lines: 1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+// Visually hidden (accessibility)
+@mixin visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}

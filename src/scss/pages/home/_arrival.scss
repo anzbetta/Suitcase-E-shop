@@ -1,0 +1,170 @@
+@use 'sass:color';
+@use '../../abstracts/variables' as *;
+
+.arrival {
+  padding: 60px 0;
+
+  &-top {
+    position: relative;
+    margin-bottom: 48px;
+  }
+
+  &-header {
+    text-align: center;
+    margin-bottom: 0;
+
+    &__title {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+      color: #6b6b6b;
+    }
+  }
+
+  &-slider {
+    &__viewport {
+      overflow-x: hidden;
+      overflow-y: visible;
+      padding: 10px 0;
+    }
+
+    &__track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.4s ease;
+      user-select: none;
+    }
+
+    &__slide {
+      flex: 0 0 calc((100% - 60px) / 4);
+      user-select: none;
+    }
+
+    &__controls {
+      margin-top: 36px;
+    }
+
+    &__controls--desktop {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.25s ease;
+    z-index: 1;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-8px) scale(1.03);
+        z-index: 3;
+      }
+    }
+
+    &__image {
+      position: relative;
+      height: 400px;
+      background: #f7f7f7;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        pointer-events: none;
+        -webkit-user-drag: none;
+      }
+    }
+
+    &__badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: $main-color;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      letter-spacing: 0.5px;
+    }
+
+    &__body {
+      padding: 16px;
+      text-align: center;
+    }
+
+    &__title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    &__price {
+      font-size: 16px;
+      font-weight: 700;
+      color: $main-color;
+      margin-bottom: 14px;
+    }
+
+    &__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px;
+      background: $main-color;
+      color: #fff;
+      border: none;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+
+      @media (hover: hover) {
+        &:hover {
+          background: color.adjust($main-color, $lightness: -10%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .arrival-slider__slide {
+    flex: 0 0 calc((100% - 40px) / 3);
+  }
+}
+
+@media (max-width: 768px) {
+  .arrival-header__title {
+    font-size: 32px;
+  }
+
+  .arrival-card__title {
+    font-size: 14px;
+  }
+
+  .arrival-slider__slide {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+
+@media (max-width: 480px) {
+  .arrival-slider__slide {
+    flex: 0 0 85%;
+  }
+}

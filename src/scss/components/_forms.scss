@@ -1,0 +1,42 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 12px;
+}
+
+label {
+	font-size: 14px;
+	color: $text-color;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+	display: block;
+	width: 100%;
+	padding: 10px 12px;
+	border: 1px solid #e6e6e6;
+	border-radius: 6px;
+	font-size: 14px;
+	color: $text-color;
+	background: #fff;
+	transition: box-shadow 0.15s ease, border-color 0.15s ease;
+
+	&:focus {
+		outline: none;
+		box-shadow: 0 4px 14px rgba(185,39,112,0.08);
+		border-color: $main-color;
+	}
+}
+
+.form-actions {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}

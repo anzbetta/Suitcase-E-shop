@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../dist/styles/main.css">
+  <title>Catalog — Best Shop</title>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+            <div class="container header__top">
+                <div class="header__socials">
+                    <a href="https://www.facebook.com/" class="header__social-link" target="_blank" rel="noopener noreferrer">
+                      <img src="../assets/header/facebook.svg" alt="facebook" class="header__social-icon">
+                    </a>
+                    <a href="https://twitter.com/" class="header__social-link" target="_blank" rel="noopener noreferrer">
+                      <img src="../assets/header/twitter.svg" alt="twitter" class="header__social-icon">
+                    </a>
+                    <a href="https://www.instagram.com/" class="header__social-link" target="_blank" rel="noopener noreferrer">
+                      <img src="../assets/header/instagram.svg" alt="instagram" class="header__social-icon">
+                    </a>
+                </div>
+                <div class="header__logo">
+                    <a href="../index.html" class="header__logo-link">
+                        <img src="../assets/header/logo.svg" alt="logo" class="header__logo-image">
+                    </a>
+                </div>
+                <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+                <div class="header__actions">
+                    <button type="button" class="header__action-link header__action-link--account" aria-label="Account Log In">
+                      <img src="../assets/header/user.svg" alt="user" class="header__action-icon">
+                    </button>
+                    <a href="./cart.html" class="header__action-link">
+                      <img src="../assets/header/shopping-cart.svg" alt="cart" class="header__action-icon">
+                      <span class="header__cart-count" style="display: none;"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="container header__bottom">
+              <nav class="nav" id="site-navigation">
+                    <ul class="nav__list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a class="active" href="./catalog.html">Catalog</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+    <main class="main">
+      <section class="catalog">
+        <div class="container">
+
+          <div class="catalog-toolbar">
+            <p class="catalog-toolbar__count">Showing 1–12 of 15 Results</p>
+
+            <div class="catalog-toolbar__right">
+              <div class="catalog-sort">
+                <select class="catalog-sort__select">
+                  <option value="">Default Sorting</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="popularity">Popularity</option>
+                  <option value="rating">Rating</option>
+                </select>
+              </div>
+
+              <div class="catalog-search">
+                <input type="text" class="catalog-search__input" placeholder="Search Models">
+                <button class="catalog-search__btn">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="11" cy="11" r="7" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M16.5 16.5L21 21" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- main layout -->
+          <div class="catalog-layout">
+
+            <!-- products grid -->
+            <div class="catalog-main">
+
+              <button class="catalog-filters-open" id="catalog-filters-open" type="button">
+                Open Filters
+              </button>
+
+              <div class="catalog-filters" id="catalog-filters-panel">
+                <div class="catalog-filters__row">
+
+                  <div class="catalog-filter">
+                    <button class="catalog-filter__trigger">
+                      Size
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                    <div class="catalog-filter__dropdown">
+                      <label class="catalog-filter__option"><input type="radio" id="size-all" name="size" value=""> All</label>
+                      <label class="catalog-filter__option"><input type="radio" id="size-s" name="size" value="S"> S</label>
+                      <label class="catalog-filter__option"><input type="radio" id="size-m" name="size" value="M"> M</label>
+                      <label class="catalog-filter__option"><input type="radio" id="size-l" name="size" value="L"> L</label>
+                      <label class="catalog-filter__option"><input type="radio" id="size-xl" name="size" value="XL"> XL</label>
+                    </div>
+                  </div>
+
+                  <div class="catalog-filter">
+                    <button class="catalog-filter__trigger">
+                      Color
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                    <div class="catalog-filter__dropdown">
+                      <label class="catalog-filter__option"><input type="radio" id="color-all" name="color" value=""> All</label>
+                      <label class="catalog-filter__option"><input type="radio" id="color-red" name="color" value="red"> Red</label>
+                      <label class="catalog-filter__option"><input type="radio" id="color-blue" name="color" value="blue"> Blue</label>
+                      <label class="catalog-filter__option"><input type="radio" id="color-green" name="color" value="green"> Green</label>
+                      <label class="catalog-filter__option"><input type="radio" id="color-black" name="color" value="black"> Black</label>
+                      <label class="catalog-filter__option"><input type="radio" id="color-grey" name="color" value="grey"> Grey</label>
+                      <label class="catalog-filter__option"><input type="radio" id="color-yellow" name="color" value="yellow"> Yellow</label>
+                      <label class="catalog-filter__option"><input type="radio" id="color-pink" name="color" value="pink"> Pink</label>
+                    </div>
+                  </div>
+
+                  <div class="catalog-filter">
+                    <button class="catalog-filter__trigger">
+                      Category
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                    <div class="catalog-filter__dropdown">
+                      <label class="catalog-filter__option"><input type="radio" id="category-all" name="category" value=""> All</label>
+                      <label class="catalog-filter__option"><input type="radio" id="category-carry-ons" name="category" value="carry-ons"> Carry-ons</label>
+                      <label class="catalog-filter__option"><input type="radio" id="category-suitcases" name="category" value="suitcases"> Suitcases</label>
+                      <label class="catalog-filter__option"><input type="radio" id="category-luggage-sets" name="category" value="luggage sets"> Luggage Sets</label>
+                      <label class="catalog-filter__option"><input type="radio" id="category-kids" name="category" value="kids' luggage"> Kids' Luggage</label>
+                    </div>
+                  </div>
+
+                  <div class="catalog-filter">
+                    <button class="catalog-filter__trigger">
+                      Sales
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                    <div class="catalog-filter__dropdown">
+                      <label class="catalog-filter__option"><input type="radio" id="sale-all" name="sale" value=""> All</label>
+                      <label class="catalog-filter__option"><input type="radio" id="sale-on" name="sale" value="true"> On Sale</label>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="catalog-filters__actions">
+                  <button class="catalog-filters__btn catalog-filters__btn--clear catalog-filters__reset">
+                    Clear Filters
+                  </button>
+                  <button class="catalog-filters__btn catalog-filters__btn--hide" id="catalog-filters-hide">
+                    Hide Filters
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- grid -->
+              <div class="catalog-grid" id="catalog-grid">
+                <!-- JS рендерить картки сюди -->
+              </div>
+
+              <!-- pagination -->
+              <div class="catalog-pagination">
+                <button class="catalog-pagination__prev" id="pagination-prev" disabled>
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Prev
+                </button>
+                <div class="catalog-pagination__pages" id="pagination-pages">
+                  <!-- JS рендерить сторінки -->
+                </div>
+                <button class="catalog-pagination__next" id="pagination-next">
+                  Next
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- sidebar -->
+            <aside class="catalog-sidebar">
+              <h3 class="catalog-sidebar__title">Top Best Sets</h3>
+              <div class="catalog-sidebar__list" id="sidebar-list">
+                <!-- JS рендерить -->
+              </div>
+            </aside>
+
+          </div>
+
+          <aside class="catalog-sidebar catalog-sidebar--mobile" data-slider>
+            <div class="catalog-sidebar__top">
+              <h3 class="catalog-sidebar__title">Top Best Sets</h3>
+              <div class="slider-controls slider-controls--mobile catalog-sidebar__controls">
+                <button class="slider-btn" type="button" aria-label="Previous slide" data-slider-prev>
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18L9 12L15 6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="slider-btn" type="button" aria-label="Next slide" data-slider-next>
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6L15 12L9 18" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="catalog-sidebar__viewport">
+              <div class="catalog-sidebar__track" id="sidebar-slider-track" data-slider-track></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section class="benefits">
+        <div class="container">
+          <h2 class="benefits__title">Our Benefits</h2>
+          <div class="benefits__grid">
+
+            <div class="benefits__item">
+              <div class="benefits__icon">
+                <img src="../assets/benefits/globe.svg" alt="">
+              </div>
+              <p class="benefits__text">Velit nisl sodales eget donec quis. volutpat orci.</p>
+            </div>
+
+            <div class="benefits__item">
+              <div class="benefits__icon">
+                <img src="../assets/benefits/truck.svg" alt="">
+              </div>
+              <p class="benefits__text">Dolor eu varius. Morbi fermentum velit nisl.</p>
+            </div>
+
+            <div class="benefits__item">
+              <div class="benefits__icon">
+                <img src="../assets/benefits/coins.svg" alt="">
+              </div>
+              <p class="benefits__text">Malesuada fames ac ante ipsum primis in faucibus.</p>
+            </div>
+
+            <div class="benefits__item">
+              <div class="benefits__icon">
+                <img src="../assets/benefits/diploma.svg" alt="">
+              </div>
+              <p class="benefits__text">Nisl sodales eget donec quis. volutpat orci.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+    
+        <footer class="footer">
+          <div class="footer__inner">         
+            <div class="footer__top">           
+              <div class="footer__left">
+                <div class="footer__nav-groups">              
+                  <div class="footer__nav-group">
+                    <h4>About Us</h4>
+                    <ul>
+                      <li><a href="./about.html">About Us</a></li>
+                      <li><a href="./contact.html">Contact Us</a></li>
+                      <li><a href="#">Organisation</a></li>
+                      <li><a href="#">Partners</a></li>
+                      <li><a href="#">Clients</a></li>
+                    </ul>
+                  </div>
+                
+                  <div class="footer__nav-group">
+                    <h4>Interesting Links</h4>
+                    <ul>
+                      <li><a href="#">Photo Gallery</a></li>
+                      <li><a href="#">Our Team</a></li>
+                      <li><a href="#">Socials</a></li>
+                    </ul>
+                  </div>
+                
+                  <div class="footer__nav-group">
+                    <h4>Achievements</h4>
+                    <ul>
+                      <li><a href="#">Winning Awards</a></li>
+                      <li><a href="#">Press</a></li>
+                      <li><a href="#">Our Amazing Clients</a></li>
+                    </ul>
+                  </div>
+                
+                </div>
+              
+                
+                <div class="footer__shipping">
+                  <h4>Shipping Information</h4>
+                  <p>
+                    Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac.
+                    Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec interdum,
+                    lectus in convallis pulvinar, enim elit porta sapien, vel finibus erat
+                    felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam.
+                  </p>
+                </div>
+              
+              </div>
+            
+              
+              <div class="footer__right">
+              
+                
+                <div class="footer__contact-text">
+                  <h4>Contact Us</h4>
+                  <p>
+                    Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
+                    volutpat orci. Sed ipsum felis, tristique egestas et, convallis
+                    ac velitn consequat nec luctus.
+                  </p>
+                </div>
+              
+                <!-- Contact details -->
+                <div class="footer__contact-details">
+                
+                  <div class="footer__contact-item">
+                    <img src="../assets/footer/phone.svg" alt="Phone" />
+                    <span>Phone: (+63) 236 6322</span>
+                  </div>
+                
+                  <div class="footer__contact-item">
+                    <img src="../assets/footer/mail.svg" alt="Email" />
+                    <span>public@news.com</span>
+                  </div>
+                
+                  <div class="footer__contact-item">
+                    <img src="../assets/footer/time.svg" alt="Hours" />
+                    <span>
+                      Mon - Fri: 10am - 6pm<br>
+                      Sat - Sun: 10am - 6pm
+                    </span>
+                  </div>
+                
+                  <div class="footer__contact-item">
+                    <img src="../assets/footer/location.svg" alt="Address" />
+                    <span>
+                      639 Jade Valley,<br>
+                      Washington Dc
+                    </span>
+                  </div>
+                
+                </div>
+              
+              </div>
+            
+            </div>
+          
+          </div>
+        
+          <div class="footer__bottom">
+            <p>© Copyright 2025</p>
+          </div>
+        
+        </footer>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal" id="login-modal" aria-hidden="true">
+    <div class="modal__overlay" id="modal-overlay"></div>
+    <div class="modal__window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" id="modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <h2 class="modal__title" id="modal-title">Account Log In</h2>
+
+      <form class="modal__form" id="login-form" novalidate>
+
+        <div class="modal__field">
+          <label class="modal__label" for="login-email">
+            Email address <span class="modal__required">*</span>
+          </label>
+          <input
+            type="email"
+            id="login-email"
+            name="email"
+            class="modal__input"
+            autocomplete="email"
+          >
+          <span class="modal__error" id="error-login-email"></span>
+        </div>
+
+        <div class="modal__field">
+          <label class="modal__label" for="login-password">
+            Password <span class="modal__required">*</span>
+          </label>
+          <div class="modal__password-wrap">
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              class="modal__input"
+              autocomplete="current-password"
+            >
+            <button type="button" class="modal__toggle-password" id="toggle-password" aria-label="Show password">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="3" stroke-width="2"/>
+              </svg>
+            </button>
+          </div>
+          <span class="modal__error" id="error-login-password"></span>
+        </div>
+
+        <div class="modal__row">
+          <label class="modal__checkbox-label">
+            <input type="checkbox" id="login-remember">
+            Remember me
+          </label>
+          <a href="#" class="modal__forgot">Forgot Your Password?</a>
+        </div>
+
+        <button type="submit" class="modal__submit">Log In</button>
+
+        <div class="modal__success" id="login-success" style="display: none;">
+          Welcome back! You are now logged in.
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="../../dist/js/catalog.js"></script>
+</body>
+</html>

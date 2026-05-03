@@ -1,0 +1,279 @@
+@use './base/reset';
+@use './abstracts/variables';
+@use './layouts/header';
+@use './layouts/footer';
+@use './base/base';
+@use './components/buttons';
+
+
+
+@use './pages/home/shared-slider-controls';
+@use './pages/home/hero-promo';
+@use './pages/home/products';
+@use './pages/home/selected';
+@use './pages/home/offer';
+@use './pages/home/arrival';
+@use './pages/home/reviews';
+@use './pages/home/benefits';
+
+
+@use './pages/_catalog';
+@use './pages/_product-details';
+@use './pages/_cart';
+@use './pages/_about';
+@use './pages/_contact';
+
+// Cross-browser helpers
+.products-slider__track,
+.products-slider__slide {
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+img {
+	object-fit: cover;
+}
+
+select {
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+// Landscape on small screens (phones)
+@media (max-height: 500px) and (orientation: landscape) {
+	.cart-banner,
+	.contact-banner,
+	.about-banner {
+		height: 140px;
+
+		&__title {
+			font-size: 24px;
+		}
+	}
+
+	.hero__inner {
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+
+	.product__gallery {
+		flex: 0 0 280px;
+	}
+}
+
+body.no-scroll {
+	overflow: hidden;
+}
+
+// ================= MODAL =================
+.modal {
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.25s ease, visibility 0.25s;
+
+	&.is-open {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.6);
+		cursor: pointer;
+	}
+
+	&__window {
+		position: relative;
+		z-index: 1;
+		background: #fff;
+		padding: 48px 40px 40px;
+		width: 100%;
+		max-width: 480px;
+		box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+		transform: translateY(-20px);
+		transition: transform 0.25s ease;
+
+		.modal.is-open & {
+			transform: translateY(0);
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		width: 32px;
+		height: 32px;
+		background: none;
+		border: none;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #888;
+		transition: color 0.2s ease;
+
+		&:hover { color: #333; }
+
+		svg {
+			width: 20px;
+			height: 20px;
+			stroke: currentColor;
+		}
+	}
+
+	&__title {
+		font-size: 22px;
+		font-weight: 700;
+		margin-bottom: 28px;
+		color: #333;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__field {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	&__label {
+		font-size: 13px;
+		font-weight: 600;
+		color: #333;
+	}
+
+	&__required {
+		color: #B92770;
+	}
+
+	&__input {
+		width: 100%;
+		height: 48px;
+		padding: 0 14px;
+		border: 1px solid #B92770;
+		font-size: 14px;
+		color: #333;
+		font-family: inherit;
+		transition: border-color 0.2s ease;
+
+		&:focus {
+			outline: none;
+			border-color: #B92770;
+			box-shadow: 0 0 0 2px rgba(185, 39, 112, 0.15);
+		}
+
+		&.is-error { border-color: #e53935; }
+		&.is-valid { border-color: #4caf50; }
+	}
+
+	&__password-wrap {
+		position: relative;
+
+		.modal__input {
+			padding-right: 48px;
+		}
+	}
+
+	&__toggle-password {
+		position: absolute;
+		right: 12px;
+		top: 50%;
+		transform: translateY(-50%);
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: #888;
+		display: flex;
+		align-items: center;
+		transition: color 0.2s ease;
+
+		&:hover { color: #B92770; }
+
+		svg {
+			width: 20px;
+			height: 20px;
+			stroke: currentColor;
+		}
+	}
+
+	&__error {
+		font-size: 12px;
+		color: #e53935;
+		min-height: 16px;
+		display: block;
+	}
+
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	&__checkbox-label {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 13px;
+		color: #555;
+		cursor: pointer;
+
+		input { accent-color: #B92770; }
+	}
+
+	&__forgot {
+		font-size: 13px;
+		color: #B92770;
+		text-decoration: none;
+		font-weight: 600;
+
+		&:hover { text-decoration: underline; }
+	}
+
+	&__submit {
+		width: 100%;
+		height: 48px;
+		background: #B92770;
+		color: #fff;
+		border: none;
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		cursor: pointer;
+		transition: background 0.2s ease;
+
+		@media (hover: hover) {
+			&:hover { background: darken(#B92770, 10%); }
+		}
+	}
+
+	&__success {
+		padding: 12px 16px;
+		background: #e8f5e9;
+		border: 1px solid #4caf50;
+		color: #2e7d32;
+		font-size: 14px;
+		font-weight: 600;
+		text-align: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.modal__window {
+		padding: 40px 20px 32px;
+		margin: 0 16px;
+	}
+}

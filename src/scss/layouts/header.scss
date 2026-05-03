@@ -1,0 +1,219 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    &__burger {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        border-radius: 999px;
+        background: $main-color;
+        box-shadow: 0 8px 18px rgba(185, 39, 112, 0.24);
+        flex-direction: column;
+        gap: 6px;
+        min-width: 48px;
+        min-height: 48px;
+        border: 0;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            border-radius: 999px;
+            background: #fff;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+    }
+
+    &__top {
+        @include flex-between;
+        padding: 20px 0;
+    }
+    &__socials {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
+
+    &__social-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    &__logo {
+       display: flex;
+       align-items: center;
+    }
+
+    &__logo-link {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         padding: 8px;
+    }
+
+    &__logo-image {
+       height: 30px; 
+       width: auto;
+    }
+    &__actions {
+        display: flex;
+        gap: 15px;
+    }
+
+    &__action-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        position: relative;
+    }
+
+    &__action-icon {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+    }
+
+    &__cart-count {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 4px;
+        border-radius: 999px;
+        background: $main-color;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 0 24px 0;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            height: 1px;
+            background: #e5e5e5;
+        }
+    }
+
+    &--menu-open {
+        .header__burger {
+            span {
+                &:first-child {
+                    transform: translateY(4px) rotate(45deg);
+                }
+
+                &:last-child {
+                    transform: translateY(-4px) rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+.nav {
+    &__list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: $text-color;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 16px;
+
+        &.active {
+            color: $main-color;
+        }
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        &__top {
+            gap: 12px;
+        }
+
+        &__socials,
+        &__actions {
+            display: none;
+        }
+
+        &__burger {
+            display: inline-flex;
+        }
+
+        &__bottom {
+            display: none;
+            padding: 0 0 16px;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &--menu-open {
+            .header__bottom {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    .nav {
+        width: 100%;
+
+        &__list {
+            width: 100%;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        a {
+            width: 100%;
+            justify-content: flex-start;
+            padding: 12px 0;
+        }
+    }
+}
+

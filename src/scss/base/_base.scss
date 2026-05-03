@@ -1,0 +1,45 @@
+
+@use '../abstracts/variables' as *;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  &.page-transition {
+    opacity: 1;
+    transition: opacity 300ms ease;
+
+    &.page-transition--out {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: calc(#{$container-width} + 30px);
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.main > section {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
