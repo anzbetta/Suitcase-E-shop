@@ -29,7 +29,6 @@ const loadProductPrices = async () => {
         return new Map();
     }
 };
-// ================= CART PAGE LOGIC =================
 const initCartPage = async () => {
     const cartBody = document.getElementById('cart-body');
     const cartSummary = document.getElementById('cart-summary');
@@ -39,7 +38,6 @@ const initCartPage = async () => {
     const cartBottom = document.querySelector('.cart-bottom');
     if (!cartBody || !cartSummary || !cartEmpty)
         return;
-    // ================= RENDER ROW =================
     const renderRow = (item, index) => `
     <div class="cart-row"
       data-id="${item.id}"
@@ -75,7 +73,6 @@ const initCartPage = async () => {
       </button>
     </div>
   `;
-    // ================= RENDER SUMMARY =================
     const renderSummary = (cart) => {
         const subtotal = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
         const hasDiscount = subtotal > DISCOUNT_THRESHOLD;
@@ -103,7 +100,6 @@ const initCartPage = async () => {
     `;
         document.getElementById('cart-checkout')?.addEventListener('click', handleCheckout);
     };
-    // ================= SHOW EMPTY =================
     const showEmpty = (message = 'Your cart is empty. Use the catalog to add new items.') => {
         if (cartTable)
             cartTable.style.display = 'none';
@@ -118,7 +114,6 @@ const initCartPage = async () => {
     `;
     };
     const priceMap = await loadProductPrices();
-    // ================= RENDER CART =================
     const renderCart = () => {
         let cart = getCart();
         if (priceMap.size > 0) {
@@ -142,17 +137,14 @@ const initCartPage = async () => {
         cartBody.innerHTML = cart.map(renderRow).join('');
         renderSummary(cart);
     };
-    // ================= CHECKOUT =================
     const handleCheckout = () => {
         saveCart([]);
         showEmpty('Thank you for your purchase.');
     };
-    // ================= CLEAR =================
     cartClear?.addEventListener('click', () => {
         saveCart([]);
         showEmpty('Your cart is empty. Use the catalog to add new items.');
     });
-    // ================= ROW ACTIONS =================
     cartBody.addEventListener('click', (e) => {
         const target = e.target;
         const row = target.closest('.cart-row');
@@ -187,10 +179,8 @@ const initCartPage = async () => {
         saveCart(cart);
         renderCart();
     });
-    // ================= INIT =================
     renderCart();
 };
-// ================= BURGER MENU =================
 const initBurgerMenu = () => {
     const header = document.querySelector('.header');
     const burgerButton = document.querySelector('.header__burger');
@@ -220,7 +210,6 @@ const initBurgerMenu = () => {
         }
     });
 };
-// ================= BOOTSTRAP =================
 updateCartCounter();
 initBurgerMenu();
 void initCartPage();

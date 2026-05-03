@@ -10,34 +10,34 @@ export interface CartItem {
 
 export const getCart = (): CartItem[] => {
   try {
-    return JSON.parse(localStorage.getItem('cart') ?? '[]');
+    return JSON.parse(localStorage.getItem("cart") ?? "[]");
   } catch {
     return [];
   }
 };
 
 export const saveCart = (cart: CartItem[]): void => {
-  localStorage.setItem('cart', JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCounter();
 };
 
 export const updateCartCounter = (): void => {
-  const counter = document.querySelector<HTMLElement>('.header__cart-count');
+  const counter = document.querySelector<HTMLElement>(".header__cart-count");
   if (!counter) return;
 
   const total = getCart().reduce((sum, i) => sum + i.quantity, 0);
   counter.textContent = String(total);
-  counter.style.display = total > 0 ? 'flex' : 'none';
+  counter.style.display = total > 0 ? "flex" : "none";
 };
 
-export const addToCart = (item: Omit<CartItem, 'quantity'>): void => {
+export const addToCart = (item: Omit<CartItem, "quantity">): void => {
   const cart = getCart();
   const existing = cart.find(
-    i =>
+    (i) =>
       i.id === item.id &&
       i.name === item.name &&
       i.size === item.size &&
-      i.color === item.color
+      i.color === item.color,
   );
 
   if (existing) {

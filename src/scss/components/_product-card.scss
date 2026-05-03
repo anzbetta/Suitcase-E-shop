@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
 
-
   &__link {
     display: block;
     text-decoration: none;
@@ -19,7 +18,9 @@
   }
 
   @media (hover: hover) {
-    &:hover { transform: translateY(-6px); }
+    &:hover {
+      transform: translateY(-6px);
+    }
   }
 
   &__image {
@@ -40,7 +41,7 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    background: #B92770;
+    background: #b92770;
     color: #fff;
     font-size: 10px;
     font-weight: 700;
@@ -67,7 +68,7 @@
   &__price {
     font-size: 19px;
     font-weight: 700;
-    color: #504E4A;
+    color: #504e4a;
     margin-bottom: 12px;
     margin-top: auto;
   }
@@ -75,7 +76,7 @@
   &__btn {
     width: 100%;
     padding: 9px;
-    background: #B92770;
+    background: #b92770;
     color: #fff;
     border: none;
     font-size: 13px;
@@ -85,7 +86,9 @@
     margin-top: 10px;
 
     @media (hover: hover) {
-      &:hover { background: darken(#B92770, 10%); }
+      &:hover {
+        background: darken(#b92770, 10%);
+      }
     }
   }
 }

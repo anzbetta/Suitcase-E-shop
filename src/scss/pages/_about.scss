@@ -112,13 +112,15 @@
     color: #555;
     margin-bottom: 16px;
 
-    &:last-of-type { margin-bottom: 28px; }
+    &:last-of-type {
+      margin-bottom: 28px;
+    }
   }
 
   &__btn {
     display: inline-block;
     padding: 14px 32px;
-    background: #B92770;
+    background: #b92770;
     color: #fff;
     font-size: 14px;
     font-weight: 700;
@@ -128,7 +130,9 @@
     transition: background 0.2s ease;
 
     @media (hover: hover) {
-      &:hover { background: darken(#B92770, 10%); }
+      &:hover {
+        background: darken(#b92770, 10%);
+      }
     }
   }
 
@@ -161,11 +165,11 @@
     transform: translateX(-50%);
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       width: 60%;
       height: 3px;
-      background: #B92770;
+      background: #b92770;
       margin: 10px auto 0;
     }
   }
@@ -196,7 +200,9 @@
     }
 
     @media (hover: hover) {
-      &:hover img { transform: scale(1.04); }
+      &:hover img {
+        transform: scale(1.04);
+      }
     }
   }
 
@@ -226,7 +232,9 @@
   .about-banner {
     height: 220px;
 
-    &__title { font-size: 32px; }
+    &__title {
+      font-size: 32px;
+    }
   }
 
   .about-features__grid {
@@ -257,8 +265,12 @@
   .about-banner {
     height: 180px;
 
-    &__title { font-size: 26px; }
-    &__subtitle { font-size: 13px; }
+    &__title {
+      font-size: 26px;
+    }
+    &__subtitle {
+      font-size: 13px;
+    }
   }
 
   .about-features__grid {
@@ -267,5 +279,7 @@
     margin: 0 auto;
   }
 
-  .about-promo__title { font-size: 24px; }
+  .about-promo__title {
+    font-size: 24px;
+  }
 }

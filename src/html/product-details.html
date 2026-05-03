@@ -1,433 +1,630 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../dist/styles/main.css">
-  <title>Product — Best Shop</title>
-</head>
-<body>
-  <div class="wrapper">
-
-    <header class="header">
-      <div class="container header__top">
-        <div class="header__socials">
-          <a href="https://www.facebook.com/" class="header__social-link" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/header/facebook.svg" alt="facebook" class="header__social-icon">
-          </a>
-          <a href="https://twitter.com/" class="header__social-link" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/header/twitter.svg" alt="twitter" class="header__social-icon">
-          </a>
-          <a href="https://www.instagram.com/" class="header__social-link" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/header/instagram.svg" alt="instagram" class="header__social-icon">
-          </a>
-        </div>
-        <div class="header__logo">
-          <a href="../index.html" class="header__logo-link">
-            <img src="../assets/header/logo.svg" alt="logo" class="header__logo-image">
-          </a>
-        </div>
-        <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-navigation">
-          <span></span>
-          <span></span>
-        </button>
-        <div class="header__actions">
-          <button type="button" class="header__action-link header__action-link--account" aria-label="Account Log In">
-            <img src="../assets/header/user.svg" alt="user" class="header__action-icon">
-          </button>
-          <a href="./cart.html" class="header__action-link" style="position: relative;">
-            <img src="../assets/header/shopping-cart.svg" alt="cart" class="header__action-icon">
-            <span class="header__cart-count" style="display: none;"></span>
-          </a>
-        </div>
-      </div>
-      <div class="container header__bottom">
-        <nav class="nav" id="site-navigation">
-          <ul class="nav__list">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="./catalog.html">Catalog</a></li>
-            <li><a href="./about.html">About Us</a></li>
-            <li><a href="./contact.html">Contact Us</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main class="main">
-      <section class="product">
-        <div class="container">
-
-          <!-- gallery + info -->
-          <div class="product__layout">
-
-            <!-- gallery -->
-            <div class="product__gallery">
-              <div class="product__main-image" id="product-main-image">
-                <img src="" alt="" id="product-main-img">
-              </div>
-              <div class="product__thumbs" id="product-thumbs">
-                <!-- JS рендерить -->
-              </div>
-            </div>
-
-            <!-- info -->
-            <div class="product__info">
-              <h1 class="product__title" id="product-title">—</h1>
-
-              <div class="product__meta">
-                <div class="product__stars" id="product-stars"></div>
-                <span class="product__reviews" id="product-reviews"></span>
-              </div>
-
-              <p class="product__price" id="product-price">—</p>
-
-              <div class="product__description" id="product-description"></div>
-
-              <!-- selects -->
-              <div class="product__options">
-                <div class="product__option">
-                  <label class="product__option-label" for="product-size">Size</label>
-                  <div class="product__select-wrap">
-                    <select class="product__select" id="product-size">
-                      <option value="">Choose option</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="product__option">
-                  <label class="product__option-label" for="product-color">Color</label>
-                  <div class="product__select-wrap">
-                    <select class="product__select" id="product-color">
-                      <option value="">Choose option</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="product__option">
-                  <label class="product__option-label" for="product-category">Category</label>
-                  <div class="product__select-wrap">
-                    <select class="product__select" id="product-category">
-                      <option value="">Choose option</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <!-- qty + add to cart -->
-              <div class="product__actions">
-                <div class="product__qty">
-                  <button class="product__qty-btn" id="qty-dec">−</button>
-                  <span class="product__qty-val" id="qty-val">1</span>
-                  <button class="product__qty-btn" id="qty-inc">+</button>
-                </div>
-                <button class="product__add-btn" id="product-add-btn">Add To Cart</button>
-              </div>
-
-              <!-- payment -->
-              <div class="product__payment">
-                <span class="product__payment-label">Payment:</span>
-                <div class="product__payment-icons">
-                  <img src="../assets/product_card/visa.svg" alt="VISA" class="product__payment-icon">
-                  <img src="../assets/product_card/american-express.svg" alt="AMEX" class="product__payment-icon">
-                  <img src="../assets/product_card/master-card.svg" alt="Mastercard" class="product__payment-icon">
-                  <img src="../assets/product_card/paypal.svg" alt="PayPal" class="product__payment-icon">
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- tabs -->
-          <div class="product__tabs">
-            <div class="product__tabs-nav">
-              <button class="product__tab-btn is-active" data-tab="details">Details</button>
-              <button class="product__tab-btn" data-tab="reviews">Reviews</button>
-              <button class="product__tab-btn" data-tab="shipping">Shipping Policy</button>
-            </div>
-
-            <div class="product__tab-content is-active" id="tab-details">
-              <p id="tab-details-text"></p>
-            </div>
-
-            <div class="product__tab-content" id="tab-reviews">
-
-  <div class="reviews-tab">
-
-    <!-- існуючі відгуки -->
-    <div class="reviews-tab__existing">
-      <h3 class="reviews-tab__count">1 review for <span id="reviews-product-name"></span></h3>
-
-      <div class="reviews-tab__list">
-        <div class="reviews-tab__item">
-          <div class="reviews-tab__avatar">
-            <img src="../assets/product_card/harper.png" alt="Ella Harper">
-          </div>
-          <div class="reviews-tab__body">
-            <div class="reviews-tab__meta">
-              <span class="reviews-tab__author">Ella Harper</span>
-              <span class="reviews-tab__date">/ June 11, 2025</span>
-              <div class="reviews-tab__stars">
-                ★★★★☆
-              </div>
-            </div>
-            <p class="reviews-tab__text">
-              Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius eget
-              urna sit amet luctus. Suspendisse potenti curabitur ac placerat est,
-              sit amet sodales risus.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- форма додавання відгуку -->
-    <div class="reviews-tab__form-wrap">
-      <h3 class="reviews-tab__form-title">Add Review</h3>
-      <p class="reviews-tab__form-note">
-        Your email address won't be shared with anybody.
-        Required fields have the symbol *
-      </p>
-
-      <div class="reviews-tab__rate">
-        <span class="reviews-tab__rate-label">Rate Product</span>
-        <div class="reviews-tab__stars-input" id="star-rating">
-          <button class="star" type="button" data-value="1" aria-label="Rate 1 star">☆</button>
-          <button class="star" type="button" data-value="2" aria-label="Rate 2 stars">☆</button>
-          <button class="star" type="button" data-value="3" aria-label="Rate 3 stars">☆</button>
-          <button class="star" type="button" data-value="4" aria-label="Rate 4 stars">☆</button>
-          <button class="star" type="button" data-value="5" aria-label="Rate 5 stars">☆</button>
-        </div>
-      </div>
-
-      <form class="reviews-tab__form" id="review-form" novalidate>
-        <div class="reviews-tab__form-row reviews-tab__form-row--full">
-          <textarea
-            class="reviews-tab__input"
-            id="review-text"
-            placeholder="Your Review*"
-            rows="5"
-            required
-          ></textarea>
-          <span class="reviews-tab__error" id="error-review-text"></span>
-        </div>
-
-        <div class="reviews-tab__form-row reviews-tab__form-row--half">
-          <div>
-            <input type="text" class="reviews-tab__input"
-              id="review-name" placeholder="Your Name*" required>
-            <span class="reviews-tab__error" id="error-review-name"></span>
-          </div>
-          <div>
-            <input type="email" class="reviews-tab__input"
-              id="review-email" placeholder="Your Email*" required>
-            <span class="reviews-tab__error" id="error-review-email"></span>
-          </div>
-        </div>
-
-        <div class="reviews-tab__form-row">
-          <label class="reviews-tab__checkbox-label">
-            <input type="checkbox" id="review-save">
-            Save my name, email, and website in this browser for when I leave another comment.
-          </label>
-        </div>
-
-        <button type="submit" class="reviews-tab__submit">Submit</button>
-
-        <div class="reviews-tab__success" id="review-success" style="display:none;">
-          Thank you! Your review has been submitted.
-        </div>
-      </form>
-    </div>
-
-  </div>
-            </div>
-
-            <div class="product__tab-content" id="tab-shipping">
-              <p>We offer worldwide shipping. Orders are processed within 1–3 business days. Standard delivery takes 5–10 business days. Express options available at checkout.</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-          <section class="arrival you-may-also-like" data-slider>
-            <div class="container">
-
-              <div class="arrival-top">
-                <div class="arrival-header">
-                  <h2 class="arrival-header__title">You May Also Like</h2>
-                  <p class="arrival-header__subtitle">Based on your selection</p>
-                </div>
-
-                <div class="arrival-slider__controls arrival-slider__controls--desktop slider-controls slider-controls--desktop">
-                  <button class="arrival-slider__btn slider-btn" data-slider-prev>
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </button>
-                  <button class="arrival-slider__btn slider-btn" data-slider-next>
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </button>
-                </div>
-              </div>
-
-              <div class="arrival-slider">
-                <div class="arrival-slider__viewport">
-                  <div class="arrival-slider__track" id="you-may-also-like-track" data-slider-track>
-                  </div>
-                </div>
-              </div>
-
-              <div class="arrival-slider__controls arrival-slider__controls--mobile slider-controls slider-controls--mobile">
-                <button class="arrival-slider__btn slider-btn" data-slider-prev>
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <span class="arrival-slider__divider slider-divider"></span>
-                <button class="arrival-slider__btn slider-btn" data-slider-next>
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-              </div>
-
-            </div>
-          </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__top">
-          <div class="footer__left">
-            <div class="footer__nav-groups">
-              <div class="footer__nav-group">
-                <h4>About Us</h4>
-                <ul>
-                  <li><a href="./about.html">About Us</a></li>
-                  <li><a href="./contact.html">Contact Us</a></li>
-                  <li><a href="#">Organisation</a></li>
-                  <li><a href="#">Partners</a></li>
-                  <li><a href="#">Clients</a></li>
-                </ul>
-              </div>
-              <div class="footer__nav-group">
-                <h4>Interesting Links</h4>
-                <ul>
-                  <li><a href="#">Photo Gallery</a></li>
-                  <li><a href="#">Our Team</a></li>
-                  <li><a href="#">Socials</a></li>
-                </ul>
-              </div>
-              <div class="footer__nav-group">
-                <h4>Achievements</h4>
-                <ul>
-                  <li><a href="#">Winning Awards</a></li>
-                  <li><a href="#">Press</a></li>
-                  <li><a href="#">Our Amazing Clients</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer__shipping">
-              <h4>Shipping Information</h4>
-              <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh rhoncus varius in non lorem.</p>
-            </div>
-          </div>
-          <div class="footer__right">
-            <div class="footer__contact-text">
-              <h4>Contact Us</h4>
-              <p>Bendum dolor eu varius. Morbi fermentum velit sodales eget donec. volutpat orci.</p>
-            </div>
-            <div class="footer__contact-details">
-              <div class="footer__contact-item">
-                <img src="../assets/footer/phone.svg" alt="Phone">
-                <span>Phone: (+63) 236 6322</span>
-              </div>
-              <div class="footer__contact-item">
-                <img src="../assets/footer/mail.svg" alt="Email">
-                <span>public@news.com</span>
-              </div>
-              <div class="footer__contact-item">
-                <img src="../assets/footer/time.svg" alt="Hours">
-                <span>Mon - Fri: 10am - 6pm<br>Sat - Sun: 10am - 6pm</span>
-              </div>
-              <div class="footer__contact-item">
-                <img src="../assets/footer/location.svg" alt="Address">
-                <span>639 Jade Valley,<br>Washington Dc</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p>© Copyright 2025</p>
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- Login Modal -->
-  <dialog class="modal" id="login-modal" aria-hidden="true" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal__overlay" id="modal-overlay"></div>
-    <div class="modal__window">
-      <button class="modal__close" id="modal-close" aria-label="Close">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-
-      <h2 class="modal__title" id="modal-title">Account Log In</h2>
-
-      <form class="modal__form" id="login-form" novalidate>
-
-        <div class="modal__field">
-          <label class="modal__label" for="login-email">
-            Email address <span class="modal__required">*</span>
-          </label>
-          <input
-            type="email"
-            id="login-email"
-            name="email"
-            class="modal__input"
-            autocomplete="email"
-          >
-          <span class="modal__error" id="error-login-email"></span>
-        </div>
-
-        <div class="modal__field">
-          <label class="modal__label" for="login-password">
-            Password <span class="modal__required">*</span>
-          </label>
-          <div class="modal__password-wrap">
-            <input
-              type="password"
-              id="login-password"
-              name="password"
-              class="modal__input"
-              autocomplete="current-password"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/styles/main.css" />
+    <title>Product — Best Shop</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header__top">
+          <div class="header__socials">
+            <a
+              href="https://www.facebook.com/"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-            <button type="button" class="modal__toggle-password" id="toggle-password" aria-label="Show password">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="12" cy="12" r="3" stroke-width="2"/>
-              </svg>
-            </button>
+              <img
+                src="../assets/header/facebook.svg"
+                alt="facebook"
+                class="header__social-icon"
+              />
+            </a>
+            <a
+              href="https://twitter.com/"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/header/twitter.svg"
+                alt="twitter"
+                class="header__social-icon"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/header/instagram.svg"
+                alt="instagram"
+                class="header__social-icon"
+              />
+            </a>
           </div>
-          <span class="modal__error" id="error-login-password"></span>
+          <div class="header__logo">
+            <a href="../index.html" class="header__logo-link">
+              <img
+                src="../assets/header/logo.svg"
+                alt="logo"
+                class="header__logo-image"
+              />
+            </a>
+          </div>
+          <button
+            class="header__burger"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+          <div class="header__actions">
+            <button
+              type="button"
+              class="header__action-link header__action-link--account"
+              aria-label="Account Log In"
+            >
+              <img
+                src="../assets/header/user.svg"
+                alt="user"
+                class="header__action-icon"
+              />
+            </button>
+            <a
+              href="./cart.html"
+              class="header__action-link"
+              style="position: relative"
+            >
+              <img
+                src="../assets/header/shopping-cart.svg"
+                alt="cart"
+                class="header__action-icon"
+              />
+              <span class="header__cart-count" style="display: none"></span>
+            </a>
+          </div>
         </div>
-
-        <div class="modal__row">
-          <label class="modal__checkbox-label">
-            <input type="checkbox" id="login-remember">
-            Remember me
-          </label>
-          <a href="#" class="modal__forgot">Forgot Your Password?</a>
+        <div class="container header__bottom">
+          <nav class="nav" id="site-navigation">
+            <ul class="nav__list">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="./catalog.html">Catalog</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+            </ul>
+          </nav>
         </div>
+      </header>
 
-        <button type="submit" class="modal__submit">Log In</button>
+      <main class="main">
+        <section class="product">
+          <div class="container">
+            <div class="product__layout">
+              <div class="product__gallery">
+                <div class="product__main-image" id="product-main-image">
+                  <img src="" alt="" id="product-main-img" />
+                </div>
+                <div class="product__thumbs" id="product-thumbs"></div>
+              </div>
 
-        <div class="modal__success" id="login-success" style="display: none;">
-          Welcome back! You are now logged in.
+              <div class="product__info">
+                <h1 class="product__title" id="product-title">—</h1>
+
+                <div class="product__meta">
+                  <div class="product__stars" id="product-stars"></div>
+                  <span class="product__reviews" id="product-reviews"></span>
+                </div>
+
+                <p class="product__price" id="product-price">—</p>
+
+                <div
+                  class="product__description"
+                  id="product-description"
+                ></div>
+
+                <div class="product__options">
+                  <div class="product__option">
+                    <label class="product__option-label" for="product-size"
+                      >Size</label
+                    >
+                    <div class="product__select-wrap">
+                      <select class="product__select" id="product-size">
+                        <option value="">Choose option</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="product__option">
+                    <label class="product__option-label" for="product-color"
+                      >Color</label
+                    >
+                    <div class="product__select-wrap">
+                      <select class="product__select" id="product-color">
+                        <option value="">Choose option</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="product__option">
+                    <label class="product__option-label" for="product-category"
+                      >Category</label
+                    >
+                    <div class="product__select-wrap">
+                      <select class="product__select" id="product-category">
+                        <option value="">Choose option</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product__actions">
+                  <div class="product__qty">
+                    <button class="product__qty-btn" id="qty-dec">−</button>
+                    <span class="product__qty-val" id="qty-val">1</span>
+                    <button class="product__qty-btn" id="qty-inc">+</button>
+                  </div>
+                  <button class="product__add-btn" id="product-add-btn">
+                    Add To Cart
+                  </button>
+                </div>
+
+                <div class="product__payment">
+                  <span class="product__payment-label">Payment:</span>
+                  <div class="product__payment-icons">
+                    <img
+                      src="../assets/product_card/visa.svg"
+                      alt="VISA"
+                      class="product__payment-icon"
+                    />
+                    <img
+                      src="../assets/product_card/american-express.svg"
+                      alt="AMEX"
+                      class="product__payment-icon"
+                    />
+                    <img
+                      src="../assets/product_card/master-card.svg"
+                      alt="Mastercard"
+                      class="product__payment-icon"
+                    />
+                    <img
+                      src="../assets/product_card/paypal.svg"
+                      alt="PayPal"
+                      class="product__payment-icon"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product__tabs">
+              <div class="product__tabs-nav">
+                <button class="product__tab-btn is-active" data-tab="details">
+                  Details
+                </button>
+                <button class="product__tab-btn" data-tab="reviews">
+                  Reviews
+                </button>
+                <button class="product__tab-btn" data-tab="shipping">
+                  Shipping Policy
+                </button>
+              </div>
+
+              <div class="product__tab-content is-active" id="tab-details">
+                <p id="tab-details-text"></p>
+              </div>
+
+              <div class="product__tab-content" id="tab-reviews">
+                <div class="reviews-tab">
+                  <div class="reviews-tab__existing">
+                    <h3 class="reviews-tab__count">
+                      1 review for <span id="reviews-product-name"></span>
+                    </h3>
+
+                    <div class="reviews-tab__list">
+                      <div class="reviews-tab__item">
+                        <div class="reviews-tab__avatar">
+                          <img
+                            src="../assets/product_card/harper.png"
+                            alt="Ella Harper"
+                          />
+                        </div>
+                        <div class="reviews-tab__body">
+                          <div class="reviews-tab__meta">
+                            <span class="reviews-tab__author">Ella Harper</span>
+                            <span class="reviews-tab__date"
+                              >/ June 11, 2025</span
+                            >
+                            <div class="reviews-tab__stars">★★★★☆</div>
+                          </div>
+                          <p class="reviews-tab__text">
+                            Proin iaculis nibh vitae lectus mollis bibendum.
+                            Quisque varius eget urna sit amet luctus.
+                            Suspendisse potenti curabitur ac placerat est, sit
+                            amet sodales risus.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="reviews-tab__form-wrap">
+                    <h3 class="reviews-tab__form-title">Add Review</h3>
+                    <p class="reviews-tab__form-note">
+                      Your email address won't be shared with anybody. Required
+                      fields have the symbol *
+                    </p>
+
+                    <div class="reviews-tab__rate">
+                      <span class="reviews-tab__rate-label">Rate Product</span>
+                      <div class="reviews-tab__stars-input" id="star-rating">
+                        <button
+                          class="star"
+                          type="button"
+                          data-value="1"
+                          aria-label="Rate 1 star"
+                        >
+                          ☆
+                        </button>
+                        <button
+                          class="star"
+                          type="button"
+                          data-value="2"
+                          aria-label="Rate 2 stars"
+                        >
+                          ☆
+                        </button>
+                        <button
+                          class="star"
+                          type="button"
+                          data-value="3"
+                          aria-label="Rate 3 stars"
+                        >
+                          ☆
+                        </button>
+                        <button
+                          class="star"
+                          type="button"
+                          data-value="4"
+                          aria-label="Rate 4 stars"
+                        >
+                          ☆
+                        </button>
+                        <button
+                          class="star"
+                          type="button"
+                          data-value="5"
+                          aria-label="Rate 5 stars"
+                        >
+                          ☆
+                        </button>
+                      </div>
+                    </div>
+
+                    <form class="reviews-tab__form" id="review-form" novalidate>
+                      <div
+                        class="reviews-tab__form-row reviews-tab__form-row--full"
+                      >
+                        <textarea
+                          class="reviews-tab__input"
+                          id="review-text"
+                          placeholder="Your Review*"
+                          rows="5"
+                          required
+                        ></textarea>
+                        <span
+                          class="reviews-tab__error"
+                          id="error-review-text"
+                        ></span>
+                      </div>
+
+                      <div
+                        class="reviews-tab__form-row reviews-tab__form-row--half"
+                      >
+                        <div>
+                          <input
+                            type="text"
+                            class="reviews-tab__input"
+                            id="review-name"
+                            placeholder="Your Name*"
+                            required
+                          />
+                          <span
+                            class="reviews-tab__error"
+                            id="error-review-name"
+                          ></span>
+                        </div>
+                        <div>
+                          <input
+                            type="email"
+                            class="reviews-tab__input"
+                            id="review-email"
+                            placeholder="Your Email*"
+                            required
+                          />
+                          <span
+                            class="reviews-tab__error"
+                            id="error-review-email"
+                          ></span>
+                        </div>
+                      </div>
+
+                      <div class="reviews-tab__form-row">
+                        <label class="reviews-tab__checkbox-label">
+                          <input type="checkbox" id="review-save" />
+                          Save my name, email, and website in this browser for
+                          when I leave another comment.
+                        </label>
+                      </div>
+
+                      <button type="submit" class="reviews-tab__submit">
+                        Submit
+                      </button>
+
+                      <div
+                        class="reviews-tab__success"
+                        id="review-success"
+                        style="display: none"
+                      >
+                        Thank you! Your review has been submitted.
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product__tab-content" id="tab-shipping">
+                <p>
+                  We offer worldwide shipping. Orders are processed within 1–3
+                  business days. Standard delivery takes 5–10 business days.
+                  Express options available at checkout.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="arrival you-may-also-like" data-slider>
+          <div class="container">
+            <div class="arrival-top">
+              <div class="arrival-header">
+                <h2 class="arrival-header__title">You May Also Like</h2>
+                <p class="arrival-header__subtitle">Based on your selection</p>
+              </div>
+
+              <div
+                class="arrival-slider__controls arrival-slider__controls--desktop slider-controls slider-controls--desktop"
+              >
+                <button class="arrival-slider__btn slider-btn" data-slider-prev>
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M15 18L9 12L15 6"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button class="arrival-slider__btn slider-btn" data-slider-next>
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 6L15 12L9 18"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="arrival-slider">
+              <div class="arrival-slider__viewport">
+                <div
+                  class="arrival-slider__track"
+                  id="you-may-also-like-track"
+                  data-slider-track
+                ></div>
+              </div>
+            </div>
+
+            <div
+              class="arrival-slider__controls arrival-slider__controls--mobile slider-controls slider-controls--mobile"
+            >
+              <button class="arrival-slider__btn slider-btn" data-slider-prev>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M15 18L9 12L15 6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <span class="arrival-slider__divider slider-divider"></span>
+              <button class="arrival-slider__btn slider-btn" data-slider-next>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M9 6L15 12L9 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__top">
+            <div class="footer__left">
+              <div class="footer__nav-groups">
+                <div class="footer__nav-group">
+                  <h4>About Us</h4>
+                  <ul>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                    <li><a href="#">Organisation</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Clients</a></li>
+                  </ul>
+                </div>
+                <div class="footer__nav-group">
+                  <h4>Interesting Links</h4>
+                  <ul>
+                    <li><a href="#">Photo Gallery</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Socials</a></li>
+                  </ul>
+                </div>
+                <div class="footer__nav-group">
+                  <h4>Achievements</h4>
+                  <ul>
+                    <li><a href="#">Winning Awards</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Our Amazing Clients</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer__shipping">
+                <h4>Shipping Information</h4>
+                <p>
+                  Nulla eleifend pulvinar purus, molestie euismod odio imperdiet
+                  ac. Ut sit amet erat nec nibh rhoncus varius in non lorem.
+                </p>
+              </div>
+            </div>
+            <div class="footer__right">
+              <div class="footer__contact-text">
+                <h4>Contact Us</h4>
+                <p>
+                  Bendum dolor eu varius. Morbi fermentum velit sodales eget
+                  donec. volutpat orci.
+                </p>
+              </div>
+              <div class="footer__contact-details">
+                <div class="footer__contact-item">
+                  <img src="../assets/footer/phone.svg" alt="Phone" />
+                  <span>Phone: (+63) 236 6322</span>
+                </div>
+                <div class="footer__contact-item">
+                  <img src="../assets/footer/mail.svg" alt="Email" />
+                  <span>public@news.com</span>
+                </div>
+                <div class="footer__contact-item">
+                  <img src="../assets/footer/time.svg" alt="Hours" />
+                  <span>Mon - Fri: 10am - 6pm<br />Sat - Sun: 10am - 6pm</span>
+                </div>
+                <div class="footer__contact-item">
+                  <img src="../assets/footer/location.svg" alt="Address" />
+                  <span>639 Jade Valley,<br />Washington Dc</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-      </form>
+        <div class="footer__bottom">
+          <p>© Copyright 2025</p>
+        </div>
+      </footer>
     </div>
-  </dialog>
 
-  <script type="module" src="../../dist/js/product.js"></script>
-  <script type="module" src="../../dist/js/utils/benefits.js"></script>
-</body>
+    <!-- Login Modal -->
+    <dialog
+      class="modal"
+      id="login-modal"
+      aria-hidden="true"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal__overlay" id="modal-overlay"></div>
+      <div class="modal__window">
+        <button class="modal__close" id="modal-close" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <h2 class="modal__title" id="modal-title">Account Log In</h2>
+
+        <form class="modal__form" id="login-form" novalidate>
+          <div class="modal__field">
+            <label class="modal__label" for="login-email">
+              Email address <span class="modal__required">*</span>
+            </label>
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              class="modal__input"
+              autocomplete="email"
+            />
+            <span class="modal__error" id="error-login-email"></span>
+          </div>
+
+          <div class="modal__field">
+            <label class="modal__label" for="login-password">
+              Password <span class="modal__required">*</span>
+            </label>
+            <div class="modal__password-wrap">
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                class="modal__input"
+                autocomplete="current-password"
+              />
+              <button
+                type="button"
+                class="modal__toggle-password"
+                id="toggle-password"
+                aria-label="Show password"
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="12" cy="12" r="3" stroke-width="2" />
+                </svg>
+              </button>
+            </div>
+            <span class="modal__error" id="error-login-password"></span>
+          </div>
+
+          <div class="modal__row">
+            <label class="modal__checkbox-label">
+              <input type="checkbox" id="login-remember" />
+              Remember me
+            </label>
+            <a href="#" class="modal__forgot">Forgot Your Password?</a>
+          </div>
+
+          <button type="submit" class="modal__submit">Log In</button>
+
+          <div class="modal__success" id="login-success" style="display: none">
+            Welcome back! You are now logged in.
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <script type="module" src="../../dist/js/product.js"></script>
+    <script type="module" src="../../dist/js/utils/benefits.js"></script>
+  </body>
 </html>

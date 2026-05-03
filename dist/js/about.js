@@ -60,7 +60,6 @@ const initAboutPage = () => {
             navigate();
         });
     });
-    // init benefits animation if present
     initBenefits();
 };
 initAboutPage();

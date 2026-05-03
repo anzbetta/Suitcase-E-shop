@@ -9,7 +9,6 @@
     margin-bottom: 60px;
   }
 
-  // ---- GALLERY ----
   &__gallery {
     flex: 0 0 420px;
     width: 420px;
@@ -55,11 +54,10 @@
 
     &.is-active,
     &:hover {
-      border-color: #B92770;
+      border-color: #b92770;
     }
   }
 
-  // ---- INFO ----
   &__info {
     flex: 1;
     min-width: 0;
@@ -112,7 +110,6 @@
     }
   }
 
-  // ---- OPTIONS ----
   &__options {
     display: flex;
     flex-direction: column;
@@ -138,7 +135,7 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       right: 14px;
       top: 50%;
@@ -166,11 +163,10 @@
 
     &:focus {
       outline: none;
-      border-color: #B92770;
+      border-color: #b92770;
     }
   }
 
-  // ---- ACTIONS ----
   &__actions {
     display: flex;
     align-items: center;
@@ -198,7 +194,9 @@
     justify-content: center;
     transition: color 0.2s ease;
 
-    &:hover { color: #B92770; }
+    &:hover {
+      color: #b92770;
+    }
   }
 
   &__qty-val {
@@ -217,7 +215,7 @@
   &__add-btn {
     flex: 1;
     height: 48px;
-    background: #B92770;
+    background: #b92770;
     color: #fff;
     border: none;
     font-size: 14px;
@@ -228,7 +226,9 @@
     transition: background 0.2s ease;
 
     @media (hover: hover) {
-      &:hover { background: darken(#B92770, 10%); }
+      &:hover {
+        background: darken(#b92770, 10%);
+      }
     }
 
     &.is-added {
@@ -236,7 +236,6 @@
     }
   }
 
-  // ---- PAYMENT ----
   &__payment {
     display: flex;
     align-items: center;
@@ -261,7 +260,6 @@
     }
   }
 
-  // ---- TABS ----
   &__tabs {
     border-top: 1px solid #efefef;
     padding-top: 0;
@@ -284,14 +282,18 @@
     letter-spacing: 0.5px;
     color: #888;
     cursor: pointer;
-    transition: color 0.2s ease, border-color 0.2s ease;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
     margin-bottom: -1px;
 
-    &:hover { color: #333; }
+    &:hover {
+      color: #333;
+    }
 
     &.is-active {
-      color: #B92770;
-      border-bottom-color: #B92770;
+      color: #b92770;
+      border-bottom-color: #b92770;
     }
   }
 
@@ -301,9 +303,13 @@
     line-height: 1.8;
     color: #555;
 
-    p + p { margin-top: 16px; }
+    p + p {
+      margin-top: 16px;
+    }
 
-    &.is-active { display: block; }
+    &.is-active {
+      display: block;
+    }
   }
 }
 
@@ -364,7 +370,7 @@
   }
 
   &__stars {
-    color: #B92770;
+    color: #b92770;
     font-size: 14px;
     margin-left: auto;
   }
@@ -375,7 +381,6 @@
     color: #555;
   }
 
-  // form
   &__form-wrap {
     flex: 1;
     min-width: 0;
@@ -423,7 +428,7 @@
 
       &.is-active,
       &.is-hover {
-        color: #B92770;
+        color: #b92770;
       }
     }
   }
@@ -439,13 +444,20 @@
     flex-direction: column;
     gap: 8px;
 
-    &--full { width: 100%; }
+    &--full {
+      width: 100%;
+    }
 
     &--half {
       flex-direction: row;
       gap: 16px;
 
-      > div { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+      > div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
     }
   }
 
@@ -461,7 +473,7 @@
 
     &:focus {
       outline: none;
-      border-color: #B92770;
+      border-color: #b92770;
     }
   }
 
@@ -479,13 +491,16 @@
     color: #555;
     cursor: pointer;
 
-    input { margin-top: 2px; accent-color: #B92770; }
+    input {
+      margin-top: 2px;
+      accent-color: #b92770;
+    }
   }
 
   &__submit {
     align-self: flex-start;
     padding: 10px 28px;
-    background: #B92770;
+    background: #b92770;
     color: #fff;
     border: none;
     font-size: 13px;
@@ -496,7 +511,9 @@
     transition: background 0.2s ease;
 
     @media (hover: hover) {
-      &:hover { background: darken(#B92770, 10%); }
+      &:hover {
+        background: darken(#b92770, 10%);
+      }
     }
   }
 
@@ -515,8 +532,13 @@
     flex-direction: column;
     gap: 32px;
 
-    &__existing { flex: none; width: 100%; }
-    &__form-row--half { flex-direction: column; }
+    &__existing {
+      flex: none;
+      width: 100%;
+    }
+    &__form-row--half {
+      flex-direction: column;
+    }
   }
 }
 
@@ -544,9 +566,13 @@
       width: 100%;
     }
 
-    &__title { font-size: 22px; }
+    &__title {
+      font-size: 22px;
+    }
 
-    &__price { font-size: 22px; }
+    &__price {
+      font-size: 22px;
+    }
 
     &__tab-btn {
       padding: 12px 20px;

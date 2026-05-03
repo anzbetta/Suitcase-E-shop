@@ -12,14 +12,12 @@ const resolveImageUrl = (imageUrl, index) => {
         return imageUrl;
     return fallbackImages[index % fallbackImages.length];
 };
-// ================= STATE =================
 const ITEMS_PER_PAGE = 12;
 let products = [];
 let currentPage = 1;
 let currentSort = '';
 let currentFilters = { category: '', color: '', size: '', sale: '' };
 let currentSearch = '';
-// ================= ELEMENTS =================
 const grid = document.getElementById('catalog-grid');
 const paginationPages = document.getElementById('pagination-pages');
 const prevBtn = document.getElementById('pagination-prev');
@@ -30,7 +28,6 @@ const searchInput = document.querySelector('.catalog-search__input');
 const searchBtn = document.querySelector('.catalog-search__btn');
 const resetBtn = document.querySelector('.catalog-filters__reset');
 const sidebarList = document.getElementById('sidebar-list');
-// ================= FILTER + SORT =================
 const getFiltered = () => {
     let result = [...products];
     if (currentSearch) {
@@ -67,7 +64,6 @@ const getFiltered = () => {
     }
     return result;
 };
-// ================= RENDER CARD =================
 const renderCard = (product) => `
   <div class="catalog-card">
     <a href="./product-details.html?id=${product.id}" class="catalog-card__link">
@@ -85,7 +81,6 @@ const renderCard = (product) => `
     </div>
   </div>
 `;
-// ================= RENDER GRID =================
 const renderGrid = () => {
     const filtered = getFiltered();
     const total = filtered.length;
@@ -106,7 +101,6 @@ const renderGrid = () => {
         : 'No results';
     renderPagination(totalPages);
 };
-// ================= RENDER PAGINATION =================
 const renderPagination = (totalPages) => {
     paginationPages.innerHTML = '';
     for (let i = 1; i <= totalPages; i++) {
@@ -120,7 +114,6 @@ const renderPagination = (totalPages) => {
         });
         paginationPages.appendChild(btn);
     }
-    // Update button states
     if (prevBtn) {
         prevBtn.disabled = currentPage <= 1;
     }
@@ -128,7 +121,6 @@ const renderPagination = (totalPages) => {
         nextBtn.disabled = currentPage >= totalPages;
     }
 };
-// ================= RENDER SIDEBAR =================
 const renderStars = (rating) => {
     const full = Math.round(rating);
     return Array.from({ length: 5 }, (_, i) => `
@@ -161,7 +153,6 @@ const renderSidebar = () => {
         .slice(0, 5);
     sidebarList.innerHTML = shuffled.map(renderSidebarItem).join('');
 };
-// ================= BURGER MENU =================
 const initBurgerMenu = () => {
     const header = document.querySelector('.header');
     const burgerButton = document.querySelector('.header__burger');
@@ -191,7 +182,6 @@ const initBurgerMenu = () => {
         }
     });
 };
-// ================= SEARCH =================
 const showNotFound = () => {
     document.querySelector('.catalog-popup')?.remove();
     const popup = document.createElement('div');
@@ -223,7 +213,6 @@ const handleSearch = () => {
     currentPage = 1;
     renderGrid();
 };
-// ================= FILTERS =================
 const filterInputs = document.querySelectorAll('.catalog-filter__option input');
 filterInputs.forEach(input => {
     input.addEventListener('change', () => {
@@ -265,19 +254,16 @@ document.getElementById('catalog-filters-open')?.addEventListener('click', () =>
     document.getElementById('catalog-filters-panel')?.classList.remove('is-hidden');
     document.getElementById('catalog-filters-open')?.classList.remove('is-visible');
 });
-// ================= SORT =================
 sortSelect?.addEventListener('change', () => {
     currentSort = sortSelect.value;
     currentPage = 1;
     renderGrid();
 });
-// ================= SEARCH EVENTS =================
 searchBtn?.addEventListener('click', handleSearch);
 searchInput?.addEventListener('keydown', (e) => {
     if (e.key === 'Enter')
         handleSearch();
 });
-// ================= PAGINATION BUTTONS =================
 prevBtn?.addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
@@ -293,7 +279,6 @@ nextBtn?.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });
-// ================= ADD TO CART =================
 grid.addEventListener('click', (e) => {
     const btn = e.target.closest('.catalog-card__btn');
     if (!btn)
@@ -318,7 +303,6 @@ grid.addEventListener('click', (e) => {
         btn.disabled = false;
     }, 1200);
 });
-// ================= INIT =================
 const initCatalogPage = async () => {
     try {
         const response = await fetch('../assets/data.json');
@@ -335,7 +319,6 @@ const initCatalogPage = async () => {
         grid.innerHTML = '<p class="catalog-empty">Failed to load products.</p>';
         return;
     }
-    // initialize benefits animation if present
     initBenefits();
     initBurgerMenu();
     renderGrid();

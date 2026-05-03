@@ -1,9 +1,7 @@
 import Slider from './home.js';
 const sliders = [];
 document.addEventListener('DOMContentLoaded', () => {
-    // enable CSS-based page transitions
     document.body.classList.add('page-transition');
-    // знаходить всі слайдери на сторінці і ініціалізує кожен
     document.querySelectorAll('[data-slider]').forEach(root => {
         if (root.dataset.sliderDynamic === 'true')
             return;

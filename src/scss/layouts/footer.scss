@@ -37,7 +37,7 @@
 
   &__nav-group {
     flex: 1 1 0;
-     
+
     padding: 20px 24px 24px;
 
     h4 {
@@ -73,7 +73,6 @@
   }
 
   &__shipping {
-     
     padding: 20px 24px 24px;
 
     h4 {
@@ -103,7 +102,6 @@
   }
 
   &__contact-text {
-     
     padding: 20px 24px 24px;
 
     h4 {
@@ -114,14 +112,13 @@
     }
 
     p {
-    font-size: 13.5px;
+      font-size: 13.5px;
       color: #555;
       line-height: 1.7;
     }
   }
 
   &__contact-details {
-     
     padding: 20px 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;

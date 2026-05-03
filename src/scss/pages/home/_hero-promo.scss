@@ -1,12 +1,12 @@
-@use 'sass:color';
-@use '../../abstracts/variables' as *;
-@use '../../abstracts/mixins' as *;
+@use "sass:color";
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
 
 .hero {
   background: #f7f7f7;
   position: relative;
   z-index: 1;
- 
+
   &__inner {
     display: flex;
     gap: 40px;
@@ -15,25 +15,25 @@
     justify-content: space-between;
     align-items: center;
   }
- 
+
   &__content,
   &__image {
     flex: 0 0 calc(50% - 20px);
   }
- 
+
   &__title {
     @include heading(50px, 40px, 32px);
     line-height: 1.15;
     margin-bottom: 24px;
   }
- 
+
   &__description {
     font-size: 17px;
     line-height: 1.7;
     margin-bottom: 36px;
     color: #444;
   }
- 
+
   &__image {
     display: block;
     max-width: 100%;
@@ -41,7 +41,7 @@
     width: 100%;
   }
 }
- 
+
 .promo {
   padding: 80px 0;
   position: relative;
@@ -51,7 +51,7 @@
   &__inner {
     display: flex;
     align-items: stretch;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   }
 
   &__content {
@@ -74,7 +74,7 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.45);
@@ -102,7 +102,7 @@
     p {
       font-size: 15px;
       line-height: 1.6;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255, 255, 255, 0.85);
       margin-bottom: 28px;
       max-width: 360px;
     }
@@ -147,7 +147,9 @@
     color: #555;
     margin-bottom: 16px;
 
-    &:last-child { margin-bottom: 0; }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__btn {
@@ -163,13 +165,17 @@
       gap: 24px;
     }
 
-    &__title { font-size: 40px; }
+    &__title {
+      font-size: 40px;
+    }
   }
 
   .promo {
     margin-top: -100px;
 
-    &__content { padding: 70px 50px; }
+    &__content {
+      padding: 70px 50px;
+    }
   }
 }
 
@@ -196,7 +202,9 @@
       margin: 0 auto;
     }
 
-    &__title { font-size: 28px; }
+    &__title {
+      font-size: 28px;
+    }
 
     &__description {
       font-size: 15px;
@@ -213,7 +221,7 @@
 
     &__inner {
       flex-direction: column;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     &__content,
@@ -223,17 +231,25 @@
       margin-top: 0;
     }
 
-    &__content { padding: 40px 32px; }
-    &__banner  { min-height: 340px; }
+    &__content {
+      padding: 40px 32px;
+    }
+    &__banner {
+      min-height: 340px;
+    }
 
     &__overlay {
       justify-content: flex-end;
       padding: 32px;
 
-      h3 { font-size: 22px; }
+      h3 {
+        font-size: 22px;
+      }
     }
 
-    &__title { font-size: 28px; }
+    &__title {
+      font-size: 28px;
+    }
   }
 }
 
@@ -245,7 +261,9 @@
       gap: 24px;
     }
 
-    &__title { font-size: 28px; }
+    &__title {
+      font-size: 28px;
+    }
 
     &__description {
       font-size: 14px;
@@ -256,14 +274,22 @@
   .promo {
     padding: 36px 0;
 
-    &__content { padding: 28px 20px; }
-    &__banner  { min-height: 260px; }
+    &__content {
+      padding: 28px 20px;
+    }
+    &__banner {
+      min-height: 260px;
+    }
 
     &__overlay {
       padding: 24px;
 
-      h3 { font-size: 20px; }
-      p  { font-size: 14px; }
+      h3 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+      }
     }
   }
 }

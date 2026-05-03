@@ -1,7 +1,6 @@
 import { addToCart, updateCartCounter } from './utils/cartUtils.js';
 import Slider from './home.js';
 import { initLoginModal } from './utils/modal.js';
-// ================= HELPERS =================
 const getProductIdFromUrl = () => {
     const params = new URLSearchParams(window.location.search);
     return params.get('id');
@@ -26,7 +25,6 @@ const renderStars = (rating) => {
     </svg>
   `).join('');
 };
-// fake additional images (thumbs) — в реальному проекті окремий масив в JSON
 const getThumbImages = (imageUrl) => {
     return [
         imageUrl,
@@ -37,27 +35,20 @@ const getThumbImages = (imageUrl) => {
 };
 let currentProductIndex = 0;
 let currentProductName = '';
-// ================= RENDER PRODUCT =================
 const renderProduct = (product) => {
-    // Store product name for reviews section
     currentProductName = product.name;
-    // title
     const titleEl = document.getElementById('product-title');
     if (titleEl)
         titleEl.textContent = product.name;
-    // stars
     const starsEl = document.getElementById('product-stars');
     if (starsEl)
         starsEl.innerHTML = renderStars(product.rating);
-    // reviews
     const reviewsEl = document.getElementById('product-reviews');
     if (reviewsEl)
         reviewsEl.textContent = `| ${Math.floor(Math.random() * 50 + 5)} Clients Rewied`;
-    // price
     const priceEl = document.getElementById('product-price');
     if (priceEl)
         priceEl.textContent = `$${product.price}`;
-    // description (два параграфи)
     const descEl = document.getElementById('product-description');
     if (descEl) {
         descEl.innerHTML = `
@@ -65,7 +56,6 @@ const renderProduct = (product) => {
       <p>The ergonomic handle and GlideMotion spinner wheels ensure effortless mobility while making a statement in sleek design. Inside, the modular compartments and adjustable straps keep your belongings secure and neatly organised, no matter the destination.</p>
     `;
     }
-    // tab details
     const tabDetailsEl = document.getElementById('tab-details-text');
     if (tabDetailsEl) {
         tabDetailsEl.innerHTML = `
@@ -73,7 +63,6 @@ const renderProduct = (product) => {
       Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius eget urna sit amet luctus. Suspendisse potenti. Curabitur ac placerat est, sit amet sodales risus. Pellentesque viverra dui auctor, ullamcorper turpis pharetra, facilisis quam. Proin iaculis nibh vitae lectus mollis bibendum.
     `;
     }
-    // size select
     const sizeSelect = document.getElementById('product-size');
     if (sizeSelect && product.size) {
         product.size.split(',').map(s => s.trim()).forEach(s => {
@@ -84,7 +73,6 @@ const renderProduct = (product) => {
         });
         sizeSelect.value = product.size.split(',')[0].trim();
     }
-    // color select
     const colorSelect = document.getElementById('product-color');
     if (colorSelect && product.color) {
         const opt = document.createElement('option');
@@ -93,7 +81,6 @@ const renderProduct = (product) => {
         colorSelect.appendChild(opt);
         colorSelect.value = product.color;
     }
-    // category select
     const categorySelect = document.getElementById('product-category');
     if (categorySelect && product.category) {
         const opt = document.createElement('option');
@@ -102,7 +89,6 @@ const renderProduct = (product) => {
         categorySelect.appendChild(opt);
         categorySelect.value = product.category;
     }
-    // gallery
     const mainImg = document.getElementById('product-main-img');
     const thumbsEl = document.getElementById('product-thumbs');
     const resolvedImageUrl = resolveImageUrl(product.imageUrl, currentProductIndex);
@@ -129,7 +115,6 @@ const renderProduct = (product) => {
             thumb.classList.add('is-active');
         });
     }
-    // qty
     let qty = 1;
     const qtyVal = document.getElementById('qty-val');
     const qtyDec = document.getElementById('qty-dec');
@@ -146,7 +131,6 @@ const renderProduct = (product) => {
         if (qtyVal)
             qtyVal.textContent = String(qty);
     });
-    // add to cart
     const addBtn = document.getElementById('product-add-btn');
     addBtn?.addEventListener('click', () => {
         const selectedSize = sizeSelect?.value || product.size;
@@ -169,7 +153,6 @@ const renderProduct = (product) => {
         }, 1500);
     });
 };
-// ================= YOU MAY ALSO LIKE =================
 const getSimilarProducts = (products, current) => {
     return products
         .filter(product => product.id !== current.id)
@@ -194,7 +177,6 @@ const renderYouMayAlsoLike = (similar) => {
     </div>
   `).join('');
 };
-// ================= TABS =================
 const initTabs = () => {
     const tabBtns = document.querySelectorAll('.product__tab-btn');
     const tabContents = document.querySelectorAll('.product__tab-content');
@@ -208,7 +190,6 @@ const initTabs = () => {
         });
     });
 };
-// ================= BURGER MENU =================
 const initBurgerMenu = () => {
     const header = document.querySelector('.header');
     const burgerButton = document.querySelector('.header__burger');
@@ -238,7 +219,6 @@ const initBurgerMenu = () => {
         }
     });
 };
-// ================= INIT =================
 const initProductPage = async () => {
     updateCartCounter();
     initBurgerMenu();
@@ -273,7 +253,6 @@ const initProductPage = async () => {
         console.error('Failed to load product:', e);
     }
 };
-// ================= STAR RATING =================
 const initStarRating = () => {
     const stars = document.querySelectorAll('.star');
     let selectedRating = 0;
@@ -296,7 +275,6 @@ const initStarRating = () => {
         });
     });
 };
-// ================= REVIEW FORM =================
 const isValidReviewEmail = (str) => {
     if (str === null || str === undefined)
         return false;
@@ -388,10 +366,8 @@ const initReviewForm = () => {
 };
 void initProductPage();
 initLoginModal();
-// Initialize reviews functionality
 initStarRating();
 initReviewForm();
-// Set product name in reviews heading
 const reviewsName = document.getElementById('reviews-product-name');
 if (reviewsName && currentProductName) {
     reviewsName.textContent = currentProductName;

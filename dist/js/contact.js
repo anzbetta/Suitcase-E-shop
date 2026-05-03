@@ -1,6 +1,5 @@
 import { updateCartCounter } from './utils/cartUtils.js';
 import { initLoginModal } from './utils/modal.js';
-// ================= BURGER MENU =================
 const initBurgerMenu = () => {
     const header = document.querySelector('.header');
     const burgerButton = document.querySelector('.header__burger');
@@ -30,7 +29,6 @@ const initBurgerMenu = () => {
         }
     });
 };
-// ================= VALIDATION HELPERS =================
 const isValidEmail = (str) => {
     if (str === null || str === undefined)
         return false;
@@ -51,7 +49,6 @@ const isValidEmail = (str) => {
     return localRegex.test(local) && domain.test(domainPart);
 };
 const isNotEmpty = (val) => val.trim().length > 0;
-// ================= FIELD VALIDATION =================
 const validateField = (input, errorEl, type) => {
     const val = input.value;
     if (!isNotEmpty(val)) {
@@ -75,7 +72,6 @@ const clearFieldError = (input, errorEl) => {
     input.classList.add('is-valid');
     errorEl.textContent = '';
 };
-// ================= INIT FORM =================
 const initContactForm = () => {
     const form = document.getElementById('contact-form');
     if (!form)
@@ -101,7 +97,6 @@ const initContactForm = () => {
             formError.style.display = 'none';
         }
     };
-    // ---- real-time validation ----
     nameInput.addEventListener('input', () => {
         validateField(nameInput, errorName, 'text');
         hideFormErrorIfValid();
@@ -118,7 +113,6 @@ const initContactForm = () => {
         validateField(messageInput, errorMessage, 'text');
         hideFormErrorIfValid();
     });
-    // ---- blur validation (показувати помилку при виході з поля) ----
     nameInput.addEventListener('blur', () => {
         validateField(nameInput, errorName, 'text');
         hideFormErrorIfValid();
@@ -135,20 +129,16 @@ const initContactForm = () => {
         validateField(messageInput, errorMessage, 'text');
         hideFormErrorIfValid();
     });
-    // ---- submit ----
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        // приховати попередні повідомлення
         formSuccess.style.display = 'none';
         formError.style.display = 'none';
-        // валідуємо всі поля
         const isNameValid = validateField(nameInput, errorName, 'text');
         const isEmailValid = validateField(emailInput, errorEmail, 'email');
         const isTopicValid = validateField(topicInput, errorTopic, 'text');
         const isMessageValid = validateField(messageInput, errorMessage, 'text');
         if (!isNameValid || !isEmailValid || !isTopicValid || !isMessageValid) {
             formError.style.display = 'block';
-            // фокус на перше поле з помилкою
             if (!isNameValid)
                 nameInput.focus();
             else if (!isEmailValid)
@@ -159,15 +149,12 @@ const initContactForm = () => {
                 messageInput.focus();
             return;
         }
-        // симулюємо відправку (без реального запиту)
         const submitBtn = form.querySelector('.contact-form__submit');
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         setTimeout(() => {
-            // success
             formSuccess.style.display = 'block';
             formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            // скидаємо форму
             form.reset();
             [nameInput, emailInput, topicInput, messageInput].forEach(el => {
                 el.classList.remove('is-valid', 'is-error');
@@ -180,7 +167,6 @@ const initContactForm = () => {
         }, 800);
     });
 };
-// ================= BOOTSTRAP =================
 updateCartCounter();
 initBurgerMenu();
 initContactForm();

@@ -60,22 +60,22 @@
     gap: 16px;
   }
 
-&__icon {
-  width: 64px;
-  height: 64px;
-  background: #B92770;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  &__icon {
+    width: 64px;
+    height: 64px;
+    background: #b92770;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 
-  img {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
+    img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
   }
-}
 
   &__title {
     font-size: 15px;
@@ -101,8 +101,8 @@
   }
 
   &__image {
-    flex: 0 0 50%;  
-    aspect-ratio: 3 / 4;  
+    flex: 0 0 50%;
+    aspect-ratio: 3 / 4;
     overflow: hidden;
 
     img {
@@ -114,7 +114,7 @@
   }
 
   &__content {
-    flex: 0 0 calc(50% - 40px); 
+    flex: 0 0 calc(50% - 40px);
     min-width: 0;
   }
 
@@ -138,7 +138,6 @@
   flex-direction: column;
   gap: 20px;
 
-
   &__field {
     display: flex;
     flex-direction: column;
@@ -152,7 +151,7 @@
   }
 
   &__required {
-    color: #B92770;
+    color: #b92770;
   }
 
   &__input,
@@ -168,7 +167,7 @@
 
     &:focus {
       outline: none;
-      border-color: #B92770;
+      border-color: #b92770;
     }
 
     &.is-error {
@@ -195,7 +194,7 @@
   &__submit {
     align-self: flex-start;
     padding: 12px 40px;
-    background: #B92770;
+    background: #b92770;
     color: #fff;
     border: none;
     font-size: 13px;
@@ -206,7 +205,9 @@
     transition: background 0.2s ease;
 
     @media (hover: hover) {
-      &:hover { background: darken(#B92770, 10%); }
+      &:hover {
+        background: darken(#b92770, 10%);
+      }
     }
   }
 
@@ -242,7 +243,9 @@
 @media (max-width: 768px) {
   .contact-banner {
     height: 220px;
-    &__title { font-size: 32px; }
+    &__title {
+      font-size: 32px;
+    }
   }
 
   .contact-info__grid {
@@ -252,7 +255,7 @@
 
   .contact-form-section__inner {
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     gap: 32px;
   }
 
@@ -260,7 +263,7 @@
     flex: none;
     width: 100%;
     max-width: 480px;
-    aspect-ratio: 4 / 3; 
+    aspect-ratio: 4 / 3;
   }
 
   .contact-form-section__content {
@@ -273,7 +276,9 @@
 @media (max-width: 480px) {
   .contact-banner {
     height: 180px;
-    &__title { font-size: 26px; }
+    &__title {
+      font-size: 26px;
+    }
   }
 
   .contact-info__grid {

@@ -47,7 +47,6 @@ class Slider {
             return;
         this.init();
     }
-    // --- helpers ---
     getSlideWidth() {
         const style = getComputedStyle(this.track);
         const gap = parseFloat(style.columnGap) || parseFloat(style.gap) || 0;
@@ -79,7 +78,6 @@ class Slider {
         this.currentIndex = this.targetIndex;
         this.updateBtns();
     }
-    // --- drag ---
     onDragStart(clientX) {
         this.isDragging = true;
         this.dragStartX = clientX;
@@ -112,31 +110,25 @@ class Slider {
             this.animateTo(this.dragIndexStart);
         }
     }
-    // --- init ---
     init() {
         this.nextBtns.forEach(btn => btn.addEventListener('click', () => this.animateTo(this.targetIndex + 1)));
         this.prevBtns.forEach(btn => btn.addEventListener('click', () => this.animateTo(this.targetIndex - 1)));
-        // mouse drag
         this.track.addEventListener('mousedown', (e) => { e.preventDefault(); this.onDragStart(e.clientX); });
         window.addEventListener('mousemove', (e) => this.onDragMove(e.clientX));
         window.addEventListener('mouseup', () => this.onDragEnd());
-        // touch drag
         this.track.addEventListener('touchstart', (e) => this.onDragStart(e.touches[0].clientX), { passive: true });
         this.track.addEventListener('touchmove', (e) => this.onDragMove(e.touches[0].clientX), { passive: true });
         this.track.addEventListener('touchend', () => this.onDragEnd());
-        // resize
         window.addEventListener('resize', () => {
             this.currentIndex = this.clampIndex(this.currentIndex);
             this.targetIndex = this.currentIndex;
             this.setPositionInstant(this.currentIndex);
             this.updateBtns();
         });
-        // старт
         this.setPositionInstant(this.currentIndex);
         this.updateBtns();
     }
 }
-// init benefits on module load (if present)
 initBenefits();
 updateCartCounter();
 initLoginModal();

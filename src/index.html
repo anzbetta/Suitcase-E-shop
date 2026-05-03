@@ -1,547 +1,849 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Suitcase e-commerce store">
-    <link rel="stylesheet" href="../dist/styles/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Suitcase e-commerce store" />
+    <link rel="stylesheet" href="../dist/styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
+      rel="stylesheet"
+    />
     <title>Best Shop</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrapper">
-        <header class="header">
-            <div class="container header__top">
-                <div class="header__socials">
-                    <a href="https://www.facebook.com/" class="header__social-link" target="_blank" rel="noopener noreferrer">
-                      <img src="./assets/header/facebook.svg" alt="facebook" class="header__social-icon">
-                    </a>
-                    <a href="https://twitter.com/" class="header__social-link" target="_blank" rel="noopener noreferrer">
-                      <img src="./assets/header/twitter.svg" alt="twitter" class="header__social-icon">
-                    </a>
-                    <a href="https://www.instagram.com/" class="header__social-link" target="_blank" rel="noopener noreferrer">
-                      <img src="./assets/header/instagram.svg" alt="instagram" class="header__social-icon">
-                    </a>
+      <header class="header">
+        <div class="container header__top">
+          <div class="header__socials">
+            <a
+              href="https://www.facebook.com/"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/header/facebook.svg"
+                alt="facebook"
+                class="header__social-icon"
+              />
+            </a>
+            <a
+              href="https://twitter.com/"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/header/twitter.svg"
+                alt="twitter"
+                class="header__social-icon"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/header/instagram.svg"
+                alt="instagram"
+                class="header__social-icon"
+              />
+            </a>
+          </div>
+          <div class="header__logo">
+            <a href="index.html" class="header__logo-link">
+              <img
+                src="./assets/header/logo.svg"
+                alt="logo"
+                class="header__logo-image"
+              />
+            </a>
+          </div>
+          <button
+            class="header__burger"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+          <div class="header__actions">
+            <button
+              type="button"
+              class="header__action-link header__action-link--account"
+              aria-label="Account Log In"
+            >
+              <img
+                src="./assets/header/user.svg"
+                alt="user"
+                class="header__action-icon"
+              />
+            </button>
+            <a href="./html/cart.html" class="header__action-link">
+              <img
+                src="./assets/header/shopping-cart.svg"
+                alt="cart"
+                class="header__action-icon"
+              />
+              <span class="header__cart-count" style="display: none"></span>
+            </a>
+          </div>
+        </div>
+        <div class="container header__bottom">
+          <nav class="nav" id="site-navigation">
+            <ul class="nav__list">
+              <li><a class="active" href="index.html">Home</a></li>
+              <li><a href="./html/catalog.html">Catalog</a></li>
+              <li><a href="./html/about.html">About Us</a></li>
+              <li><a href="./html/contact.html">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="hero">
+          <div class="container">
+            <div class="hero__inner">
+              <div class="hero__content">
+                <h1 class="hero__title">Smart Styles for Every Destination</h1>
+                <p class="hero__description">
+                  Phasellus risus turpis, pretium sit amet magna non, molestie
+                  ultricies enim. Nullam pulvinar felis at metus.
+                </p>
+                <a href="./html/catalog.html" class="button hero__button"
+                  >View All Items</a
+                >
+              </div>
+              <div class="hero__image">
+                <img
+                  src="./assets/hero/suitcase.png"
+                  alt="suitcase"
+                  class="hero__img"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="promo">
+          <div class="container">
+            <div class="promo__inner">
+              <div class="promo__content">
+                <div class="promo__author">
+                  <img src="./assets/promo/autor_Bennett.png" alt="author" />
+                  <div>
+                    <div class="promo__name">Lillian Bennett</div>
+                    <div class="promo__role">Chief Marketing Officer</div>
+                  </div>
                 </div>
-                <div class="header__logo">
-                    <a href="index.html" class="header__logo-link">
-                        <img src="./assets/header/logo.svg" alt="logo" class="header__logo-image">
-                    </a>
+                <h2 class="promo__title">Aliquam Faucibus Odionecom.</h2>
+                <p class="promo__text">
+                  Duis vestibulum elit vel neque pharetra vulputate. Quisque
+                  scelerisque nisi urna. Duis rutrum non risus in imperdiet.
+                  Proin molestie accumsan nulla sit.
+                </p>
+                <p class="promo__text">
+                  Namaki duis vestibulum elit vel neque pharetra vulputate.
+                  Quisque scelerisque nisi urna.
+                </p>
+              </div>
+              <div class="promo__banner">
+                <img
+                  src="./assets/promo/suitcases.jpg"
+                  alt="promo"
+                  class="promo__img"
+                />
+                <div class="promo__overlay">
+                  <h3>25 % Discount</h3>
+                  <p>
+                    Curabitur vulputate arcu odio, ac facilisis diam accumsan
+                    ut.
+                  </p>
+                  <a href="#" class="promo__btn button">Get Discount</a>
                 </div>
-                <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-navigation">
-                  <span></span>
-                  <span></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="products" data-slider>
+          <div class="container">
+            <div class="products-top">
+              <div class="products-header">
+                <h2 class="products-header__title">Travel suitcases</h2>
+                <p class="products-header__subtitle">
+                  Duis vestibulum elit vel neque pharetra vulputate
+                </p>
+              </div>
+
+              <div
+                class="products-slider__controls products-slider__controls--desktop slider-controls slider-controls--desktop"
+              >
+                <button
+                  class="products-slider__btn slider-btn"
+                  data-slider-prev
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15 18L9 12L15 6"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </button>
-                <div class="header__actions">
-                    <button type="button" class="header__action-link header__action-link--account" aria-label="Account Log In">
-                      <img src="./assets/header/user.svg" alt="user" class="header__action-icon">
-                    </button>
-                    <a href="./html/cart.html" class="header__action-link">
-                      <img src="./assets/header/shopping-cart.svg" alt="cart" class="header__action-icon">
-                      <span class="header__cart-count" style="display: none;"></span>
-                    </a>
-                </div>
+                <button
+                  class="products-slider__btn slider-btn"
+                  data-slider-next
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 6L15 12L9 18"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div class="container header__bottom">
-              <nav class="nav" id="site-navigation">
-                    <ul class="nav__list">
-                        <li><a class="active" href="index.html">Home</a></li>
-                        <li><a href="./html/catalog.html">Catalog</a></li>
-                        <li><a href="./html/about.html">About Us</a></li>
-                        <li><a href="./html/contact.html">Contact Us</a></li>
-                    </ul>
-                </nav>
+
+            <div class="products-slider">
+              <div class="products-slider__viewport">
+                <div class="products-slider__track" data-slider-track>
+                  <div
+                    class="products-card products-slider__slide"
+                    data-slider-slide
+                  >
+                    <div class="products-card__image">
+                      <img src="./assets/products/1.jpg" alt="" />
+                    </div>
+                    <div class="products-card__overlay"></div>
+                    <div class="products-card__content">
+                      <h3 class="products-card__title">
+                        Duis vestibulum elit vel neque.
+                      </h3>
+                      <p class="products-card__text">
+                        Duis vestibulum vel neque pharetra vulputate. Quisque
+                        scelerisque nisi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="products-card products-slider__slide"
+                    data-slider-slide
+                  >
+                    <div class="products-card__image">
+                      <img
+                        src="./assets/products/2.jpg"
+                        alt="Neque vestibulum elit neuvel."
+                      />
+                    </div>
+                    <div class="products-card__overlay"></div>
+                    <div class="products-card__content">
+                      <h3 class="products-card__title">
+                        Neque vestibulum elit neuvel.
+                      </h3>
+                      <p class="products-card__text">
+                        Duis vestibulum vel neque pharetra vulputate. Quisque
+                        scelerisque nisi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="products-card products-slider__slide"
+                    data-slider-slide
+                  >
+                    <div class="products-card__image">
+                      <img
+                        src="./assets/products/3.jpg"
+                        alt="Elitius stibulum elit velneque."
+                      />
+                    </div>
+                    <div class="products-card__overlay"></div>
+                    <div class="products-card__content">
+                      <h3 class="products-card__title">
+                        Elitius stibulum elit velneque.
+                      </h3>
+                      <p class="products-card__text">
+                        Duis vestibulum vel neque pharetra vulputate. Quisque
+                        scelerisque nisi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="products-card products-slider__slide"
+                    data-slider-slide
+                  >
+                    <div class="products-card__image">
+                      <img
+                        src="./assets/products/4.jpg"
+                        alt="Vel vestibulum elit tuvel euqen."
+                      />
+                    </div>
+                    <div class="products-card__overlay"></div>
+                    <div class="products-card__content">
+                      <h3 class="products-card__title">
+                        Vel vestibulum elit tuvel euqen.
+                      </h3>
+                      <p class="products-card__text">
+                        Duis vestibulum vel neque pharetra vulputate. Quisque
+                        scelerisque nisi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="products-card products-slider__slide"
+                    data-slider-slide
+                  >
+                    <div class="products-card__image">
+                      <img
+                        src="./assets/products/3.jpg"
+                        alt="Elitius stibulum elit velneque."
+                      />
+                    </div>
+                    <div class="products-card__overlay"></div>
+                    <div class="products-card__content">
+                      <h3 class="products-card__title">
+                        Elitius stibulum elit velneque.
+                      </h3>
+                      <p class="products-card__text">
+                        Duis vestibulum vel neque pharetra vulputate. Quisque
+                        scelerisque nisi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="products-card products-slider__slide"
+                    data-slider-slide
+                  >
+                    <div class="products-card__image">
+                      <img
+                        src="./assets/products/4.jpg"
+                        alt="Vel vestibulum elit tuvel euqen."
+                      />
+                    </div>
+                    <div class="products-card__overlay"></div>
+                    <div class="products-card__content">
+                      <h3 class="products-card__title">
+                        Vel vestibulum elit tuvel euqen.
+                      </h3>
+                      <p class="products-card__text">
+                        Duis vestibulum vel neque pharetra vulputate. Quisque
+                        scelerisque nisi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="products-card products-slider__slide"
+                    data-slider-slide
+                  >
+                    <div class="products-card__image">
+                      <img
+                        src="./assets/products/3.jpg"
+                        alt="Elitius stibulum elit velneque."
+                      />
+                    </div>
+                    <div class="products-card__overlay"></div>
+                    <div class="products-card__content">
+                      <h3 class="products-card__title">
+                        Elitius stibulum elit velneque.
+                      </h3>
+                      <p class="products-card__text">
+                        Duis vestibulum vel neque pharetra vulputate. Quisque
+                        scelerisque nisi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="products-card products-slider__slide"
+                    data-slider-slide
+                  >
+                    <div class="products-card__image">
+                      <img
+                        src="./assets/products/4.jpg"
+                        alt="Vel vestibulum elit tuvel euqen."
+                      />
+                    </div>
+                    <div class="products-card__overlay"></div>
+                    <div class="products-card__content">
+                      <h3 class="products-card__title">
+                        Vel vestibulum elit tuvel euqen.
+                      </h3>
+                      <p class="products-card__text">
+                        Duis vestibulum vel neque pharetra vulputate. Quisque
+                        scelerisque nisi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="products-card products-slider__slide"
+                    data-slider-slide
+                  >
+                    <div class="products-card__image">
+                      <img
+                        src="./assets/products/4.jpg"
+                        alt="Duis vestibulum elit vel neque."
+                      />
+                    </div>
+                    <div class="products-card__overlay"></div>
+                    <div class="products-card__content">
+                      <h3 class="products-card__title">
+                        Duis vestibulum elit vel neque.
+                      </h3>
+                      <p class="products-card__text">
+                        Duis vestibulum vel neque pharetra vulputate. Quisque
+                        scelerisque nisi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </header>
-    
-        <main class="main">
-            <section class="hero">
-                <div class="container">
-                    <div class="hero__inner">
-                        <div class="hero__content">
-                            <h1 class="hero__title">Smart Styles for Every Destination</h1>
-                            <p class="hero__description">Phasellus risus turpis, pretium sit amet magna non, molestie ultricies enim. Nullam pulvinar felis at metus.</p>
-                            <a href="./html/catalog.html" class="button hero__button">View All Items</a>
-                        </div>
-                        <div class="hero__image">
-                            <img src="./assets/hero/suitcase.png" alt="suitcase" class="hero__img">
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <div
+              class="products-slider__controls products-slider__controls--mobile slider-controls slider-controls--mobile"
+            >
+              <button class="products-slider__btn slider-btn" data-slider-prev>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 18L9 12L15 6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
 
-            <section class="promo">
-                <div class="container">
-                    <div class="promo__inner">
-                        <div class="promo__content">
-                            <div class="promo__author">
-                                <img src="./assets/promo/autor_Bennett.png" alt="author" />
-                                <div>
-                                  <div class="promo__name">Lillian Bennett</div>
-                                  <div class="promo__role">Chief Marketing Officer</div>
-                                </div>
-                            </div>
-                            <h2 class="promo__title">Aliquam Faucibus Odionecom.</h2>
-                            <p class="promo__text">
-                                Duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna. Duis rutrum non risus in imperdiet. Proin molestie accumsan nulla sit.
-                            </p>
-                            <p class="promo__text">
-                                Namaki duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna.
-                            </p>
-                        </div>
-                        <div class="promo__banner">
-                            <img src="./assets/promo/suitcases.jpg" alt="promo" class="promo__img">
-                            <div class="promo__overlay">
-                                <h3>25 % Discount</h3>
-                                <p>Curabitur vulputate arcu odio, ac facilisis diam accumsan ut.</p>
-                                <a href="#" class="promo__btn button">Get Discount</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+              <span class="products-slider__divider slider-divider"></span>
 
-            
-            <section class="products" data-slider>
-                <div class="container">
-                    <div class="products-top">
-                        <div class="products-header">
-                           <h2 class="products-header__title">Travel suitcases</h2>
-                           <p class="products-header__subtitle">
-                              Duis vestibulum elit vel neque pharetra vulputate
-                           </p>
-                        </div>
-
-                       
-                        <div class="products-slider__controls products-slider__controls--desktop slider-controls slider-controls--desktop">
-                           <button class="products-slider__btn slider-btn" data-slider-prev>
-                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg>
-                           </button>
-                           <button class="products-slider__btn slider-btn" data-slider-next>
-                              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg>
-                           </button>
-                        </div>
-                    </div>
-
-                    <div class="products-slider">
-                        <div class="products-slider__viewport">
-                            <div class="products-slider__track" data-slider-track>
-                                <div class="products-card products-slider__slide" data-slider-slide>
-                                    <div class="products-card__image">
-                                        <img src="./assets/products/1.jpg" alt="">
-                                    </div>
-                                    <div class="products-card__overlay"></div>
-                                    <div class="products-card__content">
-                                        <h3 class="products-card__title">Duis vestibulum elit vel neque.</h3>
-                                        <p class="products-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
-                                    </div>
-                                </div>
-
-                                <div class="products-card products-slider__slide" data-slider-slide>
-                                    <div class="products-card__image">
-                                        <img src="./assets/products/2.jpg" alt="Neque vestibulum elit neuvel.">
-                                    </div>
-                                    <div class="products-card__overlay"></div>
-                                    <div class="products-card__content">
-                                        <h3 class="products-card__title">Neque vestibulum elit neuvel.</h3>
-                                        <p class="products-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
-                                    </div>
-                                </div>
-
-                                <div class="products-card products-slider__slide" data-slider-slide>
-                                    <div class="products-card__image">
-                                        <img src="./assets/products/3.jpg" alt="Elitius stibulum elit velneque.">
-                                    </div>
-                                    <div class="products-card__overlay"></div>
-                                    <div class="products-card__content">
-                                        <h3 class="products-card__title">Elitius stibulum elit velneque.</h3>
-                                        <p class="products-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
-                                    </div>
-                                </div>
-
-                                <div class="products-card products-slider__slide" data-slider-slide>
-                                    <div class="products-card__image">
-                                        <img src="./assets/products/4.jpg" alt="Vel vestibulum elit tuvel euqen.">
-                                    </div>
-                                    <div class="products-card__overlay"></div>
-                                    <div class="products-card__content">
-                                        <h3 class="products-card__title">Vel vestibulum elit tuvel euqen.</h3>
-                                        <p class="products-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
-                                    </div>
-                                </div>
-
-                                <div class="products-card products-slider__slide" data-slider-slide>
-                                    <div class="products-card__image">
-                                        <img src="./assets/products/3.jpg" alt="Elitius stibulum elit velneque.">
-                                    </div>
-                                    <div class="products-card__overlay"></div>
-                                    <div class="products-card__content">
-                                        <h3 class="products-card__title">Elitius stibulum elit velneque.</h3>
-                                        <p class="products-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
-                                    </div>
-                                </div>
-
-                                <div class="products-card products-slider__slide" data-slider-slide>
-                                    <div class="products-card__image">
-                                        <img src="./assets/products/4.jpg" alt="Vel vestibulum elit tuvel euqen.">
-                                    </div>
-                                    <div class="products-card__overlay"></div>
-                                    <div class="products-card__content">
-                                        <h3 class="products-card__title">Vel vestibulum elit tuvel euqen.</h3>
-                                        <p class="products-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
-                                    </div>
-                                </div>
-
-                                <div class="products-card products-slider__slide" data-slider-slide>
-                                    <div class="products-card__image">
-                                        <img src="./assets/products/3.jpg" alt="Elitius stibulum elit velneque.">
-                                    </div>
-                                    <div class="products-card__overlay"></div>
-                                    <div class="products-card__content">
-                                        <h3 class="products-card__title">Elitius stibulum elit velneque.</h3>
-                                        <p class="products-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
-                                    </div>
-                                </div>
-
-                                <div class="products-card products-slider__slide" data-slider-slide>
-                                    <div class="products-card__image">
-                                        <img src="./assets/products/4.jpg" alt="Vel vestibulum elit tuvel euqen.">
-                                    </div>
-                                    <div class="products-card__overlay"></div>
-                                    <div class="products-card__content">
-                                        <h3 class="products-card__title">Vel vestibulum elit tuvel euqen.</h3>
-                                        <p class="products-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
-                                    </div>
-                                </div>
-
-                                <div class="products-card products-slider__slide" data-slider-slide>
-                                    <div class="products-card__image">
-                                        <img src="./assets/products/4.jpg" alt="Duis vestibulum elit vel neque.">
-                                    </div>
-                                    <div class="products-card__overlay"></div>
-                                    <div class="products-card__content">
-                                        <h3 class="products-card__title">Duis vestibulum elit vel neque.</h3>
-                                        <p class="products-card__text">Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="products-slider__controls products-slider__controls--mobile slider-controls slider-controls--mobile">
-                        <button class="products-slider__btn slider-btn" data-slider-prev>
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-
-                        <span class="products-slider__divider slider-divider"></span>
-
-                        <button class="products-slider__btn slider-btn" data-slider-next>
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
-
-                </div>
-            </section>
-            <section class="selected" data-slider data-slider-dynamic="true">
-                <div class="container">
-                    <div class="selected-top">
-                        <div class="selected-header">
-                            <h2 class="selected-header__title">Selected Products</h2>
-                            <p class="selected-header__subtitle">Duis vestibulum elit vel neque pharetra</p>
-                        </div>
-                        <div class="selected-slider__controls selected-slider__controls--desktop slider-controls slider-controls--desktop">
-                            <button class="selected-slider__btn slider-btn" data-slider-prev>
-                                <svg viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </button>
-                            <button class="selected-slider__btn slider-btn" data-slider-next>
-                                <svg viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </button>
-                        </div>
-                    </div>
-            
-                <div class="selected-slider">
-                  <div class="selected-slider__viewport">
-                    <div class="selected-slider__track" data-slider-track id="selected-track">
-                      <!-- JS renders cards here -->
-                    </div>
-                  </div>
-                </div>
-            
-                                <div class="selected-slider__controls selected-slider__controls--mobile slider-controls slider-controls--mobile">
-                  <button class="selected-slider__btn slider-btn" data-slider-prev>
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </button>
-                  <span class="selected-slider__divider slider-divider"></span>
-                  <button class="selected-slider__btn slider-btn" data-slider-next>
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </button>
-                </div>
-            
-              </div>
-            </section>
-            <section class="offer">
-              <div class="container">
-                <div class="offer__inner">
-                  <img src="./assets/offer/offer.jpg" alt="Offer" class="offer__bg">
-                  <div class="offer__overlay"></div>
-                
-                  <div class="offer__left">
-                    <span class="offer__percent">50%</span>
-                    <p class="offer__subtext">Curabitur vulputate arcu odio, ac facilisis diam.</p>
-                  </div>
-              
-                  <div class="offer__right">
-                    <h2 class="offer__title">Offer Of The Month</h2>
-                    <p class="offer__text">Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut imperdiet et leo in vulputate.</p>
-                    <a href="#" class="offer__btn">Get Offer Today</a>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="arrival" data-slider data-slider-dynamic="true">
-              <div class="container">
-
-                <div class="arrival-top">
-                  <div class="arrival-header">
-                    <h2 class="arrival-header__title">New Products Arrival</h2>
-                    <p class="arrival-header__subtitle">Duis vestibulum elit vel neque pharetra</p>
-                  </div>
-
-                  <div class="arrival-slider__controls arrival-slider__controls--desktop slider-controls slider-controls--desktop">
-                    <button class="arrival-slider__btn slider-btn" data-slider-prev>
-                      <svg viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
-                    <button class="arrival-slider__btn slider-btn" data-slider-next>
-                      <svg viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
-                  </div>
-                </div>
-            
-                <div class="arrival-slider">
-                  <div class="arrival-slider__viewport">
-                    <div class="arrival-slider__track" data-slider-track id="arrival-track">
-                      <!-- JS renders cards here -->
-                    </div>
-                  </div>
-                </div>
-            
-                <div class="arrival-slider__controls arrival-slider__controls--mobile slider-controls slider-controls--mobile">
-                  <button class="arrival-slider__btn slider-btn" data-slider-prev>
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </button>
-                  <span class="arrival-slider__divider slider-divider"></span>
-                  <button class="arrival-slider__btn slider-btn" data-slider-next>
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </button>
-                </div>
-            
-              </div>
-            </section>
-            <section class="reviews">
-              <div class="container">
-              
-                <div class="reviews-header">
-                  <h2 class="reviews-header__title">Our Grateful Customers</h2>
-                  <p class="reviews-header__subtitle">Duis vestibulum elit vel neque pharetra</p>
-                </div>
-              
-                <div class="reviews__grid">
-                
-                  <div class="reviews__card">
-                    <div class="reviews__avatar">
-                      <img src="./assets/reviews/1.png" alt="Ethan Wade">
-                    </div>
-                    <p class="reviews__text">Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut mperdiet et leo in vulputate.</p>
-                    <span class="reviews__name">Ethan Wade, New York</span>
-                  </div>
-                
-                  <div class="reviews__card">
-                    <div class="reviews__avatar">
-                      <img src="./assets/reviews/2.png" alt="Jane Reyes">
-                    </div>
-                    <p class="reviews__text">Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut mperdiet et leo in vulputate.</p>
-                    <span class="reviews__name">Jane Reyes, California</span>
-                  </div>
-                
-                  <div class="reviews__card">
-                    <div class="reviews__avatar">
-                      <img src="./assets/reviews/3.png" alt="Erica Banks">
-                    </div>
-                    <p class="reviews__text">Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut mperdiet et leo in vulputate.</p>
-                    <span class="reviews__name">Erica Banks, Miami</span>
-                  </div>
-                
-                </div>
-              </div>
-            </section>
-            <section class="benefits">
-              <div class="container">
-                <h2 class="benefits__title">Our Benefits</h2>
-                <div class="benefits__grid">
-                
-                  <div class="benefits__item">
-                    <div class="benefits__icon">
-                      <img src="./assets/benefits/globe.svg" alt="">
-                    </div>
-                    <p class="benefits__text">Velit nisl sodales eget donec quis. volutpat orci.</p>
-                  </div>
-                
-                  <div class="benefits__item">
-                    <div class="benefits__icon">
-                      <img src="./assets/benefits/truck.svg" alt="">
-                    </div>
-                    <p class="benefits__text">Dolor eu varius. Morbi fermentum velit nisl.</p>
-                  </div>
-                
-                  <div class="benefits__item">
-                    <div class="benefits__icon">
-                      <img src="./assets/benefits/coins.svg" alt="">
-                    </div>
-                    <p class="benefits__text">Malesuada fames ac ante ipsum primis in faucibus.</p>
-                  </div>
-                
-                  <div class="benefits__item">
-                    <div class="benefits__icon">
-                      <img src="./assets/benefits/diploma.svg" alt="">
-                    </div>
-                    <p class="benefits__text">Nisl sodales eget donec quis. volutpat orci.</p>
-                  </div>
-                
-                </div>
-              </div>
-            </section>
-            
-            
-        </main>
-    
-        <footer class="footer">
-          <div class="footer__inner">         
-            <div class="footer__top">           
-              <div class="footer__left">
-                <div class="footer__nav-groups">              
-                  <div class="footer__nav-group">
-                    <h4>About Us</h4>
-                    <ul>
-                      <li><a href="./src/html/about.html">About Us</a></li>
-                      <li><a href="./src/html/contact.html">Contact Us</a></li>
-                      <li><a href="#">Organisation</a></li>
-                      <li><a href="#">Partners</a></li>
-                      <li><a href="#">Clients</a></li>
-                    </ul>
-                  </div>
-                
-                  <div class="footer__nav-group">
-                    <h4>Interesting Links</h4>
-                    <ul>
-                      <li><a href="#">Photo Gallery</a></li>
-                      <li><a href="#">Our Team</a></li>
-                      <li><a href="#">Socials</a></li>
-                    </ul>
-                  </div>
-                
-                  <div class="footer__nav-group">
-                    <h4>Achievements</h4>
-                    <ul>
-                      <li><a href="#">Winning Awards</a></li>
-                      <li><a href="#">Press</a></li>
-                      <li><a href="#">Our Amazing Clients</a></li>
-                    </ul>
-                  </div>
-                
-                </div>
-              
-                
-                <div class="footer__shipping">
-                  <h4>Shipping Information</h4>
-                  <p>
-                    Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac.
-                    Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec interdum,
-                    lectus in convallis pulvinar, enim elit porta sapien, vel finibus erat
-                    felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam.
-                  </p>
-                </div>
-              
-              </div>
-            
-              
-              <div class="footer__right">
-              
-                
-                <div class="footer__contact-text">
-                  <h4>Contact Us</h4>
-                  <p>
-                    Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
-                    volutpat orci. Sed ipsum felis, tristique egestas et, convallis
-                    ac velitn consequat nec luctus.
-                  </p>
-                </div>
-              
-                <!-- Contact details -->
-                <div class="footer__contact-details">
-                
-                  <div class="footer__contact-item">
-                    <img src="./assets/footer/phone.svg" alt="Phone" />
-                    <span>Phone: (+63) 236 6322</span>
-                  </div>
-                
-                  <div class="footer__contact-item">
-                    <img src="./assets/footer/mail.svg" alt="Email" />
-                    <span>public@news.com</span>
-                  </div>
-                
-                  <div class="footer__contact-item">
-                    <img src="./assets/footer/time.svg" alt="Hours" />
-                    <span>
-                      Mon - Fri: 10am - 6pm<br>
-                      Sat - Sun: 10am - 6pm
-                    </span>
-                  </div>
-                
-                  <div class="footer__contact-item">
-                    <img src="./assets/footer/location.svg" alt="Address" />
-                    <span>
-                      639 Jade Valley,<br>
-                      Washington Dc
-                    </span>
-                  </div>
-                
-                </div>
-              
-              </div>
-            
+              <button class="products-slider__btn slider-btn" data-slider-next>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 6L15 12L9 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
-          
           </div>
-        
-          <div class="footer__bottom">
-            <p>© Copyright 2025</p>
+        </section>
+        <section class="selected" data-slider data-slider-dynamic="true">
+          <div class="container">
+            <div class="selected-top">
+              <div class="selected-header">
+                <h2 class="selected-header__title">Selected Products</h2>
+                <p class="selected-header__subtitle">
+                  Duis vestibulum elit vel neque pharetra
+                </p>
+              </div>
+              <div
+                class="selected-slider__controls selected-slider__controls--desktop slider-controls slider-controls--desktop"
+              >
+                <button
+                  class="selected-slider__btn slider-btn"
+                  data-slider-prev
+                >
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M15 18L9 12L15 6"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="selected-slider__btn slider-btn"
+                  data-slider-next
+                >
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 6L15 12L9 18"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="selected-slider">
+              <div class="selected-slider__viewport">
+                <div
+                  class="selected-slider__track"
+                  data-slider-track
+                  id="selected-track"
+                ></div>
+              </div>
+            </div>
+
+            <div
+              class="selected-slider__controls selected-slider__controls--mobile slider-controls slider-controls--mobile"
+            >
+              <button class="selected-slider__btn slider-btn" data-slider-prev>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M15 18L9 12L15 6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <span class="selected-slider__divider slider-divider"></span>
+              <button class="selected-slider__btn slider-btn" data-slider-next>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M9 6L15 12L9 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-        
-        </footer>
+        </section>
+        <section class="offer">
+          <div class="container">
+            <div class="offer__inner">
+              <img
+                src="./assets/offer/offer.jpg"
+                alt="Offer"
+                class="offer__bg"
+              />
+              <div class="offer__overlay"></div>
+
+              <div class="offer__left">
+                <span class="offer__percent">50%</span>
+                <p class="offer__subtext">
+                  Curabitur vulputate arcu odio, ac facilisis diam.
+                </p>
+              </div>
+
+              <div class="offer__right">
+                <h2 class="offer__title">Offer Of The Month</h2>
+                <p class="offer__text">
+                  Curabitur vulputate arcu odio, ac facilisis diam accumsan ut.
+                  Ut imperdiet et leo in vulputate.
+                </p>
+                <a href="#" class="offer__btn">Get Offer Today</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="arrival" data-slider data-slider-dynamic="true">
+          <div class="container">
+            <div class="arrival-top">
+              <div class="arrival-header">
+                <h2 class="arrival-header__title">New Products Arrival</h2>
+                <p class="arrival-header__subtitle">
+                  Duis vestibulum elit vel neque pharetra
+                </p>
+              </div>
+
+              <div
+                class="arrival-slider__controls arrival-slider__controls--desktop slider-controls slider-controls--desktop"
+              >
+                <button class="arrival-slider__btn slider-btn" data-slider-prev>
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M15 18L9 12L15 6"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button class="arrival-slider__btn slider-btn" data-slider-next>
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 6L15 12L9 18"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="arrival-slider">
+              <div class="arrival-slider__viewport">
+                <div
+                  class="arrival-slider__track"
+                  data-slider-track
+                  id="arrival-track"
+                ></div>
+              </div>
+            </div>
+
+            <div
+              class="arrival-slider__controls arrival-slider__controls--mobile slider-controls slider-controls--mobile"
+            >
+              <button class="arrival-slider__btn slider-btn" data-slider-prev>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M15 18L9 12L15 6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <span class="arrival-slider__divider slider-divider"></span>
+              <button class="arrival-slider__btn slider-btn" data-slider-next>
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M9 6L15 12L9 18"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="reviews">
+          <div class="container">
+            <div class="reviews-header">
+              <h2 class="reviews-header__title">Our Grateful Customers</h2>
+              <p class="reviews-header__subtitle">
+                Duis vestibulum elit vel neque pharetra
+              </p>
+            </div>
+
+            <div class="reviews__grid">
+              <div class="reviews__card">
+                <div class="reviews__avatar">
+                  <img src="./assets/reviews/1.png" alt="Ethan Wade" />
+                </div>
+                <p class="reviews__text">
+                  Curabitur vulputate arcu odio, ac facilisis diam accumsan ut.
+                  Ut mperdiet et leo in vulputate.
+                </p>
+                <span class="reviews__name">Ethan Wade, New York</span>
+              </div>
+
+              <div class="reviews__card">
+                <div class="reviews__avatar">
+                  <img src="./assets/reviews/2.png" alt="Jane Reyes" />
+                </div>
+                <p class="reviews__text">
+                  Curabitur vulputate arcu odio, ac facilisis diam accumsan ut.
+                  Ut mperdiet et leo in vulputate.
+                </p>
+                <span class="reviews__name">Jane Reyes, California</span>
+              </div>
+
+              <div class="reviews__card">
+                <div class="reviews__avatar">
+                  <img src="./assets/reviews/3.png" alt="Erica Banks" />
+                </div>
+                <p class="reviews__text">
+                  Curabitur vulputate arcu odio, ac facilisis diam accumsan ut.
+                  Ut mperdiet et leo in vulputate.
+                </p>
+                <span class="reviews__name">Erica Banks, Miami</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="benefits">
+          <div class="container">
+            <h2 class="benefits__title">Our Benefits</h2>
+            <div class="benefits__grid">
+              <div class="benefits__item">
+                <div class="benefits__icon">
+                  <img src="./assets/benefits/globe.svg" alt="" />
+                </div>
+                <p class="benefits__text">
+                  Velit nisl sodales eget donec quis. volutpat orci.
+                </p>
+              </div>
+
+              <div class="benefits__item">
+                <div class="benefits__icon">
+                  <img src="./assets/benefits/truck.svg" alt="" />
+                </div>
+                <p class="benefits__text">
+                  Dolor eu varius. Morbi fermentum velit nisl.
+                </p>
+              </div>
+
+              <div class="benefits__item">
+                <div class="benefits__icon">
+                  <img src="./assets/benefits/coins.svg" alt="" />
+                </div>
+                <p class="benefits__text">
+                  Malesuada fames ac ante ipsum primis in faucibus.
+                </p>
+              </div>
+
+              <div class="benefits__item">
+                <div class="benefits__icon">
+                  <img src="./assets/benefits/diploma.svg" alt="" />
+                </div>
+                <p class="benefits__text">
+                  Nisl sodales eget donec quis. volutpat orci.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__top">
+            <div class="footer__left">
+              <div class="footer__nav-groups">
+                <div class="footer__nav-group">
+                  <h4>About Us</h4>
+                  <ul>
+                    <li><a href="./src/html/about.html">About Us</a></li>
+                    <li><a href="./src/html/contact.html">Contact Us</a></li>
+                    <li><a href="#">Organisation</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Clients</a></li>
+                  </ul>
+                </div>
+
+                <div class="footer__nav-group">
+                  <h4>Interesting Links</h4>
+                  <ul>
+                    <li><a href="#">Photo Gallery</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Socials</a></li>
+                  </ul>
+                </div>
+
+                <div class="footer__nav-group">
+                  <h4>Achievements</h4>
+                  <ul>
+                    <li><a href="#">Winning Awards</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Our Amazing Clients</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="footer__shipping">
+                <h4>Shipping Information</h4>
+                <p>
+                  Nulla eleifend pulvinar purus, molestie euismod odio imperdiet
+                  ac. Ut sit amet erat nec nibh rhoncus varius in non lorem.
+                  Donec interdum, lectus in convallis pulvinar, enim elit porta
+                  sapien, vel finibus erat felis sed neque. Etiam aliquet neque
+                  sagittis erat tincidunt aliquam.
+                </p>
+              </div>
+            </div>
+
+            <div class="footer__right">
+              <div class="footer__contact-text">
+                <h4>Contact Us</h4>
+                <p>
+                  Bendum dolor eu varius. Morbi fermentum velitsodales egetonec.
+                  volutpat orci. Sed ipsum felis, tristique egestas et,
+                  convallis ac velitn consequat nec luctus.
+                </p>
+              </div>
+
+              <div class="footer__contact-details">
+                <div class="footer__contact-item">
+                  <img src="./assets/footer/phone.svg" alt="Phone" />
+                  <span>Phone: (+63) 236 6322</span>
+                </div>
+
+                <div class="footer__contact-item">
+                  <img src="./assets/footer/mail.svg" alt="Email" />
+                  <span>public@news.com</span>
+                </div>
+
+                <div class="footer__contact-item">
+                  <img src="./assets/footer/time.svg" alt="Hours" />
+                  <span>
+                    Mon - Fri: 10am - 6pm<br />
+                    Sat - Sun: 10am - 6pm
+                  </span>
+                </div>
+
+                <div class="footer__contact-item">
+                  <img src="./assets/footer/location.svg" alt="Address" />
+                  <span>
+                    639 Jade Valley,<br />
+                    Washington Dc
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© Copyright 2025</p>
+        </div>
+      </footer>
     </div>
 
     <!-- Login Modal -->
-    <dialog class="modal" id="login-modal" aria-hidden="true" aria-modal="true" aria-labelledby="modal-title">
+    <dialog
+      class="modal"
+      id="login-modal"
+      aria-hidden="true"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
       <div class="modal__overlay" id="modal-overlay"></div>
       <div class="modal__window">
         <button class="modal__close" id="modal-close" aria-label="Close">
           <svg viewBox="0 0 24 24" fill="none">
-            <path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
           </svg>
         </button>
 
         <h2 class="modal__title" id="modal-title">Account Log In</h2>
 
         <form class="modal__form" id="login-form" novalidate>
-
           <div class="modal__field">
             <label class="modal__label" for="login-email">
               Email address <span class="modal__required">*</span>
@@ -552,7 +854,7 @@
               name="email"
               class="modal__input"
               autocomplete="email"
-            >
+            />
             <span class="modal__error" id="error-login-email"></span>
           </div>
 
@@ -567,11 +869,20 @@
                 name="password"
                 class="modal__input"
                 autocomplete="current-password"
+              />
+              <button
+                type="button"
+                class="modal__toggle-password"
+                id="toggle-password"
+                aria-label="Show password"
               >
-              <button type="button" class="modal__toggle-password" id="toggle-password" aria-label="Show password">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke-width="2" stroke-linecap="round"/>
-                  <circle cx="12" cy="12" r="3" stroke-width="2"/>
+                  <path
+                    d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="12" cy="12" r="3" stroke-width="2" />
                 </svg>
               </button>
             </div>
@@ -580,7 +891,7 @@
 
           <div class="modal__row">
             <label class="modal__checkbox-label">
-              <input type="checkbox" id="login-remember">
+              <input type="checkbox" id="login-remember" />
               Remember me
             </label>
             <a href="#" class="modal__forgot">Forgot Your Password?</a>
@@ -588,15 +899,14 @@
 
           <button type="submit" class="modal__submit">Log In</button>
 
-          <div class="modal__success" id="login-success" style="display: none;">
+          <div class="modal__success" id="login-success" style="display: none">
             Welcome back! You are now logged in.
           </div>
-
         </form>
       </div>
     </dialog>
 
     <script type="module" src="../dist/js/main.js"></script>
     <script type="module" src="../dist/js/home.js"></script>
-</body>
+  </body>
 </html>

@@ -3,7 +3,6 @@
   padding: 40px 0 80px;
 }
 
-// toolbar
 .catalog-toolbar {
   display: flex;
   align-items: center;
@@ -24,23 +23,26 @@
   }
 }
 
-// sort
 .catalog-sort {
   &__select {
     height: 40px;
     padding: 0 32px 0 12px;
     border: 1px solid #ddd;
     font-size: 14px;
-    color: #504E4A;
-    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23504E4A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 10px center;
+    color: #504e4a;
+    background: #fff
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23504E4A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
+      no-repeat right 10px center;
     appearance: none;
     cursor: pointer;
 
-    &:focus { outline: none; border-color: #B92770; }
+    &:focus {
+      outline: none;
+      border-color: #b92770;
+    }
   }
 }
 
-// search
 .catalog-search {
   display: flex;
   align-items: center;
@@ -77,12 +79,13 @@
     }
 
     @media (hover: hover) {
-      &:hover svg { stroke: #B92770; }
+      &:hover svg {
+        stroke: #b92770;
+      }
     }
   }
 }
 
-// layout
 .catalog-layout {
   display: flex;
   align-items: flex-start;
@@ -94,20 +97,21 @@
   min-width: 0;
 }
 
-// filters
 .catalog-filters {
   border: 1px solid #ddd;
   padding: 24px;
   margin-bottom: 24px;
 
-  &.is-hidden { display: none; }
+  &.is-hidden {
+    display: none;
+  }
 
   &__row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     padding-bottom: 24px;
-    border-bottom: 2px solid #B92770;
+    border-bottom: 2px solid #b92770;
     margin-bottom: 20px;
   }
 
@@ -125,12 +129,14 @@
     letter-spacing: 0.5px;
     cursor: pointer;
     border: none;
-    background: #B92770;
+    background: #b92770;
     color: #fff;
     transition: background 0.2s ease;
 
     @media (hover: hover) {
-      &:hover { background: darken(#B92770, 10%); }
+      &:hover {
+        background: darken(#b92770, 10%);
+      }
     }
   }
 }
@@ -143,7 +149,7 @@
   padding: 0 32px;
   margin-bottom: 24px;
   border: none;
-  background: #B92770;
+  background: #b92770;
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -152,10 +158,14 @@
   cursor: pointer;
   transition: background 0.2s ease;
 
-  &.is-visible { display: inline-flex; }
+  &.is-visible {
+    display: inline-flex;
+  }
 
   @media (hover: hover) {
-    &:hover { background: darken(#B92770, 10%); }
+    &:hover {
+      background: darken(#b92770, 10%);
+    }
   }
 }
 
@@ -185,9 +195,11 @@
     }
 
     &.is-active {
-      border-color: #B92770;
-      color: #B92770;
-      svg { stroke: #B92770; }
+      border-color: #b92770;
+      color: #b92770;
+      svg {
+        stroke: #b92770;
+      }
     }
   }
 
@@ -198,12 +210,15 @@
     right: 0;
     background: #fff;
     border: 1px solid #ddd;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     z-index: 100;
     opacity: 0;
     visibility: hidden;
     transform: translateY(6px);
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s;
   }
 
   &:hover &__trigger svg {
@@ -226,18 +241,21 @@
     cursor: pointer;
     transition: background 0.15s ease;
 
-    &:hover { background: #f7f7f7; }
+    &:hover {
+      background: #f7f7f7;
+    }
 
-    input { accent-color: #B92770; }
+    input {
+      accent-color: #b92770;
+    }
 
     &.is-selected {
-      color: #B92770;
+      color: #b92770;
       font-weight: 600;
     }
   }
 }
 
-// grid
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -245,7 +263,6 @@
   margin-bottom: 32px;
 }
 
-// empty state
 .catalog-empty {
   text-align: center;
   padding: 40px 0;
@@ -254,7 +271,6 @@
   grid-column: 1 / -1;
 }
 
-// pagination
 .catalog-pagination {
   display: flex;
   align-items: center;
@@ -280,11 +296,14 @@
     cursor: pointer;
     transition: all 0.2s ease;
 
-    &:hover { border-color: #B92770; color: #B92770; }
+    &:hover {
+      border-color: #b92770;
+      color: #b92770;
+    }
 
     &.is-active {
-      background: #B92770;
-      border-color: #B92770;
+      background: #b92770;
+      border-color: #b92770;
       color: #fff;
     }
   }
@@ -311,10 +330,12 @@
 
     @media (hover: hover) {
       &:not(:disabled):hover {
-        border-color: #B92770;
-        color: #B92770;
+        border-color: #b92770;
+        color: #b92770;
 
-        svg { stroke: #B92770; }
+        svg {
+          stroke: #b92770;
+        }
       }
     }
 
@@ -324,15 +345,20 @@
       color: #999;
       border-color: #ddd;
 
-      svg { stroke: #999; }
+      svg {
+        stroke: #999;
+      }
     }
   }
 
-  &__prev { margin-right: 8px; }
-  &__next { margin-left: 8px; }
+  &__prev {
+    margin-right: 8px;
+  }
+  &__next {
+    margin-left: 8px;
+  }
 }
 
-// sidebar — desktop
 .catalog-sidebar {
   flex: 0 1 clamp(220px, 24vw, 340px);
   width: clamp(220px, 24vw, 340px);
@@ -375,7 +401,10 @@
     }
   }
 
-  &__info { flex: 1; min-width: 0; }
+  &__info {
+    flex: 1;
+    min-width: 0;
+  }
 
   &__name {
     font-size: 13px;
@@ -402,16 +431,14 @@
   &__price {
     font-size: 13px;
     font-weight: 700;
-    color: #B92770;
+    color: #b92770;
   }
 }
 
-
-// popup
 .catalog-popup {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -421,7 +448,7 @@
     background: #fff;
     padding: 32px 40px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 
     p {
       font-size: 16px;
@@ -432,7 +459,7 @@
 
   &__close {
     padding: 10px 32px;
-    background: #B92770;
+    background: #b92770;
     color: #fff;
     border: none;
     font-size: 14px;
@@ -440,7 +467,9 @@
     cursor: pointer;
 
     @media (hover: hover) {
-      &:hover { background: darken(#B92770, 10%); }
+      &:hover {
+        background: darken(#b92770, 10%);
+      }
     }
   }
 }
@@ -519,5 +548,4 @@
     width: 100%;
     text-align: center;
   }
-
 }
