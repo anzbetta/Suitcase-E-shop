@@ -1,49 +1,49 @@
-import { getCart, saveCart, updateCartCounter } from './utils/cartUtils.js';
-import { initBenefits } from './utils/benefits.js';
-import { initLoginModal } from './utils/modal.js';
+import { getCart, saveCart, updateCartCounter, } from "./utils/cartUtils.js";
+import { initBenefits } from "./utils/benefits.js";
+import { initLoginModal } from "./utils/modal.js";
 const SHIPPING = 30;
 const DISCOUNT_THRESHOLD = 3000;
 const DISCOUNT_RATE = 0.1;
 const fallbackImages = [
-    '../assets/arrival/1.jpg',
-    '../assets/arrival/2.jpg',
-    '../assets/arrival/3.jpg',
-    '../assets/arrival/4.jpg',
+    "../assets/arrival/1.jpg",
+    "../assets/arrival/2.jpg",
+    "../assets/arrival/3.jpg",
+    "../assets/arrival/4.jpg",
 ];
 const resolveCartImage = (image, index) => {
-    if (image && !image.startsWith('path/to/'))
+    if (image && !image.startsWith("path/to/"))
         return image;
     return fallbackImages[index % fallbackImages.length];
 };
 const loadProductPrices = async () => {
     try {
-        const response = await fetch('../assets/data.json');
+        const response = await fetch("../assets/data.json");
         if (!response.ok)
             throw new Error(`HTTP error: ${response.status}`);
         const rawData = await response.json();
         const products = rawData.data || [];
-        return new Map(products.map(product => [product.id, product.price]));
+        return new Map(products.map((product) => [product.id, product.price]));
     }
     catch (error) {
-        console.error('Failed to load product prices:', error);
+        console.error("Failed to load product prices:", error);
         return new Map();
     }
 };
 const initCartPage = async () => {
-    const cartBody = document.getElementById('cart-body');
-    const cartSummary = document.getElementById('cart-summary');
-    const cartEmpty = document.getElementById('cart-empty');
-    const cartClear = document.getElementById('cart-clear');
-    const cartTable = document.querySelector('.cart-table');
-    const cartBottom = document.querySelector('.cart-bottom');
+    const cartBody = document.getElementById("cart-body");
+    const cartSummary = document.getElementById("cart-summary");
+    const cartEmpty = document.getElementById("cart-empty");
+    const cartClear = document.getElementById("cart-clear");
+    const cartTable = document.querySelector(".cart-table");
+    const cartBottom = document.querySelector(".cart-bottom");
     if (!cartBody || !cartSummary || !cartEmpty)
         return;
     const renderRow = (item, index) => `
     <div class="cart-row"
       data-id="${item.id}"
       data-name="${item.name}"
-      data-size="${item.size ?? ''}"
-      data-color="${item.color ?? ''}">
+      data-size="${item.size ?? ""}"
+      data-color="${item.color ?? ""}">
 
       <div class="cart-row__image">
         <img src="${resolveCartImage(item.image, index)}" alt="${item.name}">
@@ -51,8 +51,8 @@ const initCartPage = async () => {
 
       <div class="cart-row__name">
         ${item.name}
-        ${item.size ? `<span class="cart-row__meta">Size: ${item.size}</span>` : ''}
-        ${item.color ? `<span class="cart-row__meta">Color: ${item.color}</span>` : ''}
+        ${item.size ? `<span class="cart-row__meta">Size: ${item.size}</span>` : ""}
+        ${item.color ? `<span class="cart-row__meta">Color: ${item.color}</span>` : ""}
       </div>
 
       <div class="cart-row__price">$${item.price}</div>
@@ -83,11 +83,13 @@ const initCartPage = async () => {
         <span>Sub Total</span>
         <span>$${subtotal}</span>
       </div>
-      ${hasDiscount ? `
+      ${hasDiscount
+            ? `
       <div class="cart-summary__row">
         <span>Discount</span>
         <span>$${discount}</span>
-      </div>` : ''}
+      </div>`
+            : ""}
       <div class="cart-summary__row">
         <span>Shipping</span>
         <span>$${SHIPPING}</span>
@@ -98,14 +100,16 @@ const initCartPage = async () => {
       </div>
       <button class="cart-summary__checkout" id="cart-checkout">Checkout</button>
     `;
-        document.getElementById('cart-checkout')?.addEventListener('click', handleCheckout);
+        document
+            .getElementById("cart-checkout")
+            ?.addEventListener("click", handleCheckout);
     };
-    const showEmpty = (message = 'Your cart is empty. Use the catalog to add new items.') => {
+    const showEmpty = (message = "Your cart is empty. Use the catalog to add new items.") => {
         if (cartTable)
-            cartTable.style.display = 'none';
+            cartTable.style.display = "none";
         if (cartBottom)
-            cartBottom.style.display = 'none';
-        cartEmpty.style.display = 'block';
+            cartBottom.style.display = "none";
+        cartEmpty.style.display = "block";
         cartEmpty.innerHTML = `
       <p>${message}</p>
       <a href="catalog.html" class="cart-actions__btn cart-actions__btn--fill">
@@ -117,7 +121,7 @@ const initCartPage = async () => {
     const renderCart = () => {
         let cart = getCart();
         if (priceMap.size > 0) {
-            cart = cart.map(item => {
+            cart = cart.map((item) => {
                 const updatedPrice = priceMap.get(item.id);
                 if (updatedPrice === undefined)
                     return item;
@@ -130,48 +134,48 @@ const initCartPage = async () => {
             return;
         }
         if (cartTable)
-            cartTable.style.display = '';
+            cartTable.style.display = "";
         if (cartBottom)
-            cartBottom.style.display = '';
-        cartEmpty.style.display = 'none';
-        cartBody.innerHTML = cart.map(renderRow).join('');
+            cartBottom.style.display = "";
+        cartEmpty.style.display = "none";
+        cartBody.innerHTML = cart.map(renderRow).join("");
         renderSummary(cart);
     };
     const handleCheckout = () => {
         saveCart([]);
-        showEmpty('Thank you for your purchase.');
+        showEmpty("Thank you for your purchase.");
     };
-    cartClear?.addEventListener('click', () => {
+    cartClear?.addEventListener("click", () => {
         saveCart([]);
-        showEmpty('Your cart is empty. Use the catalog to add new items.');
+        showEmpty("Your cart is empty. Use the catalog to add new items.");
     });
-    cartBody.addEventListener('click', (e) => {
+    cartBody.addEventListener("click", (e) => {
         const target = e.target;
-        const row = target.closest('.cart-row');
+        const row = target.closest(".cart-row");
         if (!row)
             return;
         const name = row.dataset.name;
-        const size = row.dataset.size ?? '';
-        const color = row.dataset.color ?? '';
-        const action = target.closest('[data-action]')?.dataset.action;
+        const size = row.dataset.size ?? "";
+        const color = row.dataset.color ?? "";
+        const action = target.closest("[data-action]")?.dataset.action;
         if (!action)
             return;
         let cart = getCart();
         // знаходимо по name + size + color (merge логіка — пункти 50, 51)
-        const findItem = (c) => c.find(i => i.name === name &&
-            (i.size ?? '') === size &&
-            (i.color ?? '') === color);
-        if (action === 'delete') {
-            cart = cart.filter(i => !(i.name === name &&
-                (i.size ?? '') === size &&
-                (i.color ?? '') === color));
+        const findItem = (c) => c.find((i) => i.name === name &&
+            (i.size ?? "") === size &&
+            (i.color ?? "") === color);
+        if (action === "delete") {
+            cart = cart.filter((i) => !(i.name === name &&
+                (i.size ?? "") === size &&
+                (i.color ?? "") === color));
         }
-        if (action === 'inc') {
+        if (action === "inc") {
             const item = findItem(cart);
             if (item)
                 item.quantity++;
         }
-        if (action === 'dec') {
+        if (action === "dec") {
             const item = findItem(cart);
             if (item)
                 item.quantity = Math.max(1, item.quantity - 1);
@@ -182,29 +186,29 @@ const initCartPage = async () => {
     renderCart();
 };
 const initBurgerMenu = () => {
-    const header = document.querySelector('.header');
-    const burgerButton = document.querySelector('.header__burger');
-    const navigation = document.querySelector('#site-navigation');
+    const header = document.querySelector(".header");
+    const burgerButton = document.querySelector(".header__burger");
+    const navigation = document.querySelector("#site-navigation");
     if (!header || !burgerButton || !navigation) {
         return;
     }
     const closeMenu = () => {
-        header.classList.remove('header--menu-open');
-        burgerButton.setAttribute('aria-expanded', 'false');
-        burgerButton.setAttribute('aria-label', 'Open menu');
+        header.classList.remove("header--menu-open");
+        burgerButton.setAttribute("aria-expanded", "false");
+        burgerButton.setAttribute("aria-label", "Open menu");
     };
-    burgerButton.addEventListener('click', () => {
-        const isOpen = header.classList.toggle('header--menu-open');
-        burgerButton.setAttribute('aria-expanded', String(isOpen));
-        burgerButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    burgerButton.addEventListener("click", () => {
+        const isOpen = header.classList.toggle("header--menu-open");
+        burgerButton.setAttribute("aria-expanded", String(isOpen));
+        burgerButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
     });
-    navigation.addEventListener('click', event => {
+    navigation.addEventListener("click", (event) => {
         const target = event.target;
-        if (target.closest('a')) {
+        if (target.closest("a")) {
             closeMenu();
         }
     });
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
         if (window.innerWidth > 768) {
             closeMenu();
         }

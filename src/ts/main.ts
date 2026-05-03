@@ -1,13 +1,14 @@
 import Slider from "./home.js";
 
-const sliders: Slider[] = [];
+const sliders = new WeakMap<HTMLElement, Slider>();
 
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("page-transition");
 
   document.querySelectorAll<HTMLElement>("[data-slider]").forEach((root) => {
     if (root.dataset.sliderDynamic === "true") return;
-    sliders.push(new Slider(root));
+    if (sliders.has(root)) return;
+    sliders.set(root, new Slider(root));
   });
 
   const header = document.querySelector<HTMLElement>(".header");

@@ -5,14 +5,21 @@
 }
 
 body,
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p,
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -52,7 +59,7 @@ body {
   justify-content: center;
   padding: 12px;
   border-radius: 999px;
-  background: #B92770;
+  background: #b92770;
   box-shadow: 0 8px 18px rgba(185, 39, 112, 0.24);
   flex-direction: column;
   gap: 6px;
@@ -127,7 +134,7 @@ body {
   height: 18px;
   padding: 0 4px;
   border-radius: 999px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -176,10 +183,10 @@ body {
   padding: 15px 16px;
 }
 .nav a.active {
-  color: #B92770;
+  color: #b92770;
 }
 .nav a:hover {
-  color: #B92770;
+  color: #b92770;
 }
 
 @media (max-width: 768px) {
@@ -376,7 +383,8 @@ body.page-transition.page-transition--out {
   pointer-events: none;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -410,7 +418,7 @@ html, body {
   align-items: center;
   justify-content: center;
   padding: 14px 22px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
@@ -467,7 +475,7 @@ html, body {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   font-size: 10px;
   font-weight: 700;
@@ -491,14 +499,14 @@ html, body {
 .catalog-card__price {
   font-size: 19px;
   font-weight: 700;
-  color: #504E4A;
+  color: #504e4a;
   margin-bottom: 12px;
   margin-top: auto;
 }
 .catalog-card__btn {
   width: 100%;
   padding: 9px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border: none;
   font-size: 13px;
@@ -543,7 +551,7 @@ html, body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border: none;
   display: flex;
@@ -1032,7 +1040,7 @@ html, body {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -1053,13 +1061,13 @@ html, body {
 .selected-card__price {
   font-size: 16px;
   font-weight: 700;
-  color: #B92770;
+  color: #b92770;
   margin-bottom: 14px;
 }
 .selected-card__btn {
   width: 100%;
   padding: 10px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border: none;
   font-size: 14px;
@@ -1166,7 +1174,7 @@ html, body {
 .offer__btn {
   display: inline-block;
   padding: 14px 32px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   font-size: 15px;
   font-weight: 700;
@@ -1287,7 +1295,7 @@ html, body {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -1308,7 +1316,7 @@ html, body {
 .arrival-card__price {
   font-size: 16px;
   font-weight: 700;
-  color: #B92770;
+  color: #b92770;
   margin-bottom: 14px;
 }
 .arrival-card__btn {
@@ -1317,7 +1325,7 @@ html, body {
   justify-content: center;
   width: 100%;
   padding: 10px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border: none;
   text-decoration: none;
@@ -1375,7 +1383,7 @@ html, body {
   gap: 24px;
 }
 .reviews__card {
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid #efefef;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -1413,7 +1421,7 @@ html, body {
 .reviews__name {
   font-size: 15px;
   font-weight: 700;
-  color: #B92770;
+  color: #b92770;
 }
 
 @media (max-width: 768px) {
@@ -1541,14 +1549,14 @@ html, body {
   padding: 0 32px 0 12px;
   border: 1px solid #ddd;
   font-size: 14px;
-  color: #504E4A;
+  color: #504e4a;
   background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23504E4A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 10px center;
   appearance: none;
   cursor: pointer;
 }
 .catalog-sort__select:focus {
   outline: none;
-  border-color: #B92770;
+  border-color: #b92770;
 }
 
 .catalog-search {
@@ -1586,7 +1594,7 @@ html, body {
 }
 @media (hover: hover) {
   .catalog-search__btn:hover svg {
-    stroke: #B92770;
+    stroke: #b92770;
   }
 }
 
@@ -1614,7 +1622,7 @@ html, body {
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   padding-bottom: 24px;
-  border-bottom: 2px solid #B92770;
+  border-bottom: 2px solid #b92770;
   margin-bottom: 20px;
 }
 .catalog-filters__actions {
@@ -1630,7 +1638,7 @@ html, body {
   letter-spacing: 0.5px;
   cursor: pointer;
   border: none;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   transition: background 0.2s ease;
 }
@@ -1648,7 +1656,7 @@ html, body {
   padding: 0 32px;
   margin-bottom: 24px;
   border: none;
-  background: #B92770;
+  background: #b92770;
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1691,11 +1699,11 @@ html, body {
   flex-shrink: 0;
 }
 .catalog-filter__trigger.is-active {
-  border-color: #B92770;
-  color: #B92770;
+  border-color: #b92770;
+  color: #b92770;
 }
 .catalog-filter__trigger.is-active svg {
-  stroke: #B92770;
+  stroke: #b92770;
 }
 .catalog-filter__dropdown {
   position: absolute;
@@ -1733,10 +1741,10 @@ html, body {
   background: #f7f7f7;
 }
 .catalog-filter__option input {
-  accent-color: #B92770;
+  accent-color: #b92770;
 }
 .catalog-filter__option.is-selected {
-  color: #B92770;
+  color: #b92770;
   font-weight: 600;
 }
 
@@ -1780,12 +1788,12 @@ html, body {
   transition: all 0.2s ease;
 }
 .catalog-pagination__page:hover {
-  border-color: #B92770;
-  color: #B92770;
+  border-color: #b92770;
+  color: #b92770;
 }
 .catalog-pagination__page.is-active {
-  background: #B92770;
-  border-color: #B92770;
+  background: #b92770;
+  border-color: #b92770;
   color: #fff;
 }
 .catalog-pagination__prev, .catalog-pagination__next {
@@ -1808,11 +1816,11 @@ html, body {
 }
 @media (hover: hover) {
   .catalog-pagination__prev:not(:disabled):hover, .catalog-pagination__next:not(:disabled):hover {
-    border-color: #B92770;
-    color: #B92770;
+    border-color: #b92770;
+    color: #b92770;
   }
   .catalog-pagination__prev:not(:disabled):hover svg, .catalog-pagination__next:not(:disabled):hover svg {
-    stroke: #B92770;
+    stroke: #b92770;
   }
 }
 .catalog-pagination__prev:disabled, .catalog-pagination__next:disabled {
@@ -1895,7 +1903,7 @@ html, body {
 .catalog-sidebar-item__price {
   font-size: 13px;
   font-weight: 700;
-  color: #B92770;
+  color: #b92770;
 }
 
 .catalog-popup {
@@ -1920,7 +1928,7 @@ html, body {
 }
 .catalog-popup__close {
   padding: 10px 32px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border: none;
   font-size: 14px;
@@ -2040,7 +2048,7 @@ html, body {
   display: block;
 }
 .product__thumb.is-active, .product__thumb:hover {
-  border-color: #B92770;
+  border-color: #b92770;
 }
 .product__info {
   flex: 1;
@@ -2133,7 +2141,7 @@ html, body {
 }
 .product__select:focus {
   outline: none;
-  border-color: #B92770;
+  border-color: #b92770;
 }
 .product__actions {
   display: flex;
@@ -2161,7 +2169,7 @@ html, body {
   transition: color 0.2s ease;
 }
 .product__qty-btn:hover {
-  color: #B92770;
+  color: #b92770;
 }
 .product__qty-val {
   min-width: 40px;
@@ -2178,7 +2186,7 @@ html, body {
 .product__add-btn {
   flex: 1;
   height: 48px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border: none;
   font-size: 14px;
@@ -2243,8 +2251,8 @@ html, body {
   color: #333;
 }
 .product__tab-btn.is-active {
-  color: #B92770;
-  border-bottom-color: #B92770;
+  color: #b92770;
+  border-bottom-color: #b92770;
 }
 .product__tab-content {
   display: none;
@@ -2307,7 +2315,7 @@ html, body {
   color: #888;
 }
 .reviews-tab__stars {
-  color: #B92770;
+  color: #b92770;
   font-size: 14px;
   margin-left: auto;
 }
@@ -2357,7 +2365,7 @@ html, body {
   transition: color 0.15s ease;
 }
 .reviews-tab__stars-input .star.is-active, .reviews-tab__stars-input .star.is-hover {
-  color: #B92770;
+  color: #b92770;
 }
 .reviews-tab__form {
   display: flex;
@@ -2394,7 +2402,7 @@ html, body {
 }
 .reviews-tab__input:focus {
   outline: none;
-  border-color: #B92770;
+  border-color: #b92770;
 }
 .reviews-tab__error {
   font-size: 12px;
@@ -2411,12 +2419,12 @@ html, body {
 }
 .reviews-tab__checkbox-label input {
   margin-top: 2px;
-  accent-color: #B92770;
+  accent-color: #b92770;
 }
 .reviews-tab__submit {
   align-self: flex-start;
   padding: 10px 28px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border: none;
   font-size: 13px;
@@ -2560,7 +2568,7 @@ html, body {
   gap: 16px;
   align-items: center;
   padding: 20px 24px;
-  border-bottom: 1px solid #B92770;
+  border-bottom: 1px solid #b92770;
   text-align: center;
 }
 .cart-row__image {
@@ -2610,7 +2618,7 @@ html, body {
   transition: color 0.2s ease;
 }
 .cart-row__qty-btn:hover {
-  color: #B92770;
+  color: #b92770;
 }
 .cart-row__qty-val {
   font-size: 15px;
@@ -2635,7 +2643,7 @@ html, body {
 .cart-row__delete svg {
   width: 20px;
   height: 20px;
-  stroke: #B92770;
+  stroke: #b92770;
 }
 .cart-row__delete:hover {
   opacity: 0.6;
@@ -2668,7 +2676,7 @@ html, body {
   transition: background 0.2s ease;
 }
 .cart-actions__btn--fill {
-  background: #B92770;
+  background: #b92770;
   color: #fff;
 }
 @media (hover: hover) {
@@ -2677,7 +2685,7 @@ html, body {
   }
 }
 .cart-actions__btn--outline {
-  background: #B92770;
+  background: #b92770;
   color: #fff;
 }
 @media (hover: hover) {
@@ -2698,7 +2706,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 16px 0;
-  border-bottom: 1px solid #B92770;
+  border-bottom: 1px solid #b92770;
   font-size: 15px;
 }
 .cart-summary__row:last-of-type {
@@ -2712,7 +2720,7 @@ html, body {
   display: block;
   width: 100%;
   padding: 14px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border: none;
   font-size: 13px;
@@ -2904,7 +2912,7 @@ html, body {
 .about-promo__btn {
   display: inline-block;
   padding: 14px 32px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -2948,7 +2956,7 @@ html, body {
   display: block;
   width: 60%;
   height: 3px;
-  background: #B92770;
+  background: #b92770;
   margin: 10px auto 0;
 }
 .about-team__grid {
@@ -3098,7 +3106,7 @@ html, body {
 .contact-info__icon {
   width: 64px;
   height: 64px;
-  background: #B92770;
+  background: #b92770;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -3172,7 +3180,7 @@ html, body {
   color: #333;
 }
 .contact-form__required {
-  color: #B92770;
+  color: #b92770;
 }
 .contact-form__input, .contact-form__textarea {
   width: 100%;
@@ -3186,7 +3194,7 @@ html, body {
 }
 .contact-form__input:focus, .contact-form__textarea:focus {
   outline: none;
-  border-color: #B92770;
+  border-color: #b92770;
 }
 .contact-form__input.is-error, .contact-form__textarea.is-error {
   border-color: #e53935;
@@ -3207,7 +3215,7 @@ html, body {
 .contact-form__submit {
   align-self: flex-start;
   padding: 12px 40px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border: none;
   font-size: 13px;
@@ -3422,13 +3430,13 @@ body.no-scroll {
   color: #333;
 }
 .modal__required {
-  color: #B92770;
+  color: #b92770;
 }
 .modal__input {
   width: 100%;
   height: 48px;
   padding: 0 14px;
-  border: 1px solid #B92770;
+  border: 1px solid #b92770;
   font-size: 14px;
   color: #333;
   font-family: inherit;
@@ -3436,7 +3444,7 @@ body.no-scroll {
 }
 .modal__input:focus {
   outline: none;
-  border-color: #B92770;
+  border-color: #b92770;
   box-shadow: 0 0 0 2px rgba(185, 39, 112, 0.15);
 }
 .modal__input.is-error {
@@ -3465,7 +3473,7 @@ body.no-scroll {
   transition: color 0.2s ease;
 }
 .modal__toggle-password:hover {
-  color: #B92770;
+  color: #b92770;
 }
 .modal__toggle-password svg {
   width: 20px;
@@ -3493,11 +3501,11 @@ body.no-scroll {
   cursor: pointer;
 }
 .modal__checkbox-label input {
-  accent-color: #B92770;
+  accent-color: #b92770;
 }
 .modal__forgot {
   font-size: 13px;
-  color: #B92770;
+  color: #b92770;
   text-decoration: none;
   font-weight: 600;
 }
@@ -3507,7 +3515,7 @@ body.no-scroll {
 .modal__submit {
   width: 100%;
   height: 48px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   border: none;
   font-size: 13px;

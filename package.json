@@ -1,7 +1,7 @@
 {
-  "name": "fundamentals-project-ts-template",
+  "name": "suitcase-e-shop",
   "version": "1.0.0",
-  "description": "Capstone Project TS Template",
+  "description": "Suitcase E-shop — multi-page storefront built with TypeScript and SCSS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,9 +18,16 @@
     "type": "git",
     "url": ""
   },
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "scss",
+    "sass",
+    "ecommerce",
+    "frontend",
+    "vanilla"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "type": "module",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.59.1",

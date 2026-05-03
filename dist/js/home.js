@@ -1,14 +1,14 @@
-import { initBenefits } from './utils/benefits.js';
-import { addToCart, updateCartCounter } from './utils/cartUtils.js';
-import { initLoginModal } from './utils/modal.js';
+import { initBenefits } from "./utils/benefits.js";
+import { addToCart, updateCartCounter } from "./utils/cartUtils.js";
+import { initLoginModal } from "./utils/modal.js";
 const fallbackImages = [
-    './assets/arrival/1.jpg',
-    './assets/arrival/2.jpg',
-    './assets/arrival/3.jpg',
-    './assets/arrival/4.jpg',
+    "./assets/arrival/1.jpg",
+    "./assets/arrival/2.jpg",
+    "./assets/arrival/3.jpg",
+    "./assets/arrival/4.jpg",
 ];
 const resolveImageUrl = (imageUrl, index) => {
-    if (imageUrl && !imageUrl.startsWith('path/to/'))
+    if (imageUrl && !imageUrl.startsWith("path/to/"))
         return imageUrl;
     return fallbackImages[index % fallbackImages.length];
 };
@@ -16,10 +16,10 @@ const shuffle = (items) => {
     return [...items].sort(() => Math.random() - 0.5);
 };
 const pickProducts = (products, block, count) => {
-    const matching = products.filter(product => product.blocks?.includes(block));
+    const matching = products.filter((product) => product.blocks?.includes(block));
     if (matching.length >= count)
         return matching.slice(0, count);
-    const remaining = products.filter(product => !matching.some(item => item.id === product.id));
+    const remaining = products.filter((product) => !matching.some((item) => item.id === product.id));
     return matching.concat(shuffle(remaining).slice(0, count - matching.length));
 };
 class Slider {
@@ -33,15 +33,15 @@ class Slider {
         this.baseOffset = 0;
         this.dragIndexStart = 0;
         this.DRAG_THRESHOLD = 50;
-        const track = root.querySelector('[data-slider-track]');
+        const track = root.querySelector("[data-slider-track]");
         if (!track) {
-            console.warn('Slider: [data-slider-track] not found in', root);
+            console.warn("Slider: [data-slider-track] not found in", root);
             return;
         }
         this.track = track;
-        this.slides = Array.from(root.querySelectorAll('[data-slider-slide]'));
-        this.nextBtns = Array.from(root.querySelectorAll('[data-slider-next]'));
-        this.prevBtns = Array.from(root.querySelectorAll('[data-slider-prev]'));
+        this.slides = Array.from(root.querySelectorAll("[data-slider-slide]"));
+        this.nextBtns = Array.from(root.querySelectorAll("[data-slider-next]"));
+        this.prevBtns = Array.from(root.querySelectorAll("[data-slider-prev]"));
         this.totalSlides = this.slides.length;
         if (this.totalSlides === 0)
             return;
@@ -64,16 +64,16 @@ class Slider {
     updateBtns() {
         const atStart = this.currentIndex === 0;
         const atEnd = this.currentIndex >= this.totalSlides - this.getSlidesToShow();
-        this.prevBtns.forEach(btn => btn.classList.toggle('slider-btn--disabled', atStart));
-        this.nextBtns.forEach(btn => btn.classList.toggle('slider-btn--disabled', atEnd));
+        this.prevBtns.forEach((btn) => btn.classList.toggle("slider-btn--disabled", atStart));
+        this.nextBtns.forEach((btn) => btn.classList.toggle("slider-btn--disabled", atEnd));
     }
     setPositionInstant(index) {
-        this.track.style.transition = 'none';
+        this.track.style.transition = "none";
         this.track.style.transform = `translateX(-${index * this.getSlideWidth()}px)`;
     }
     animateTo(index) {
         this.targetIndex = this.clampIndex(index);
-        this.track.style.transition = 'transform 0.4s ease';
+        this.track.style.transition = "transform 0.4s ease";
         this.track.style.transform = `translateX(-${this.targetIndex * this.getSlideWidth()}px)`;
         this.currentIndex = this.targetIndex;
         this.updateBtns();
@@ -84,8 +84,8 @@ class Slider {
         this.dragCurrentX = clientX;
         this.dragIndexStart = this.currentIndex;
         this.baseOffset = this.currentIndex * this.getSlideWidth();
-        this.track.style.transition = 'none';
-        this.track.style.cursor = 'grabbing';
+        this.track.style.transition = "none";
+        this.track.style.cursor = "grabbing";
     }
     onDragMove(clientX) {
         if (!this.isDragging)
@@ -98,7 +98,7 @@ class Slider {
         if (!this.isDragging)
             return;
         this.isDragging = false;
-        this.track.style.cursor = '';
+        this.track.style.cursor = "";
         const delta = this.dragCurrentX - this.dragStartX;
         const slideWidth = this.getSlideWidth();
         if (Math.abs(delta) > this.DRAG_THRESHOLD) {
@@ -111,15 +111,18 @@ class Slider {
         }
     }
     init() {
-        this.nextBtns.forEach(btn => btn.addEventListener('click', () => this.animateTo(this.targetIndex + 1)));
-        this.prevBtns.forEach(btn => btn.addEventListener('click', () => this.animateTo(this.targetIndex - 1)));
-        this.track.addEventListener('mousedown', (e) => { e.preventDefault(); this.onDragStart(e.clientX); });
-        window.addEventListener('mousemove', (e) => this.onDragMove(e.clientX));
-        window.addEventListener('mouseup', () => this.onDragEnd());
-        this.track.addEventListener('touchstart', (e) => this.onDragStart(e.touches[0].clientX), { passive: true });
-        this.track.addEventListener('touchmove', (e) => this.onDragMove(e.touches[0].clientX), { passive: true });
-        this.track.addEventListener('touchend', () => this.onDragEnd());
-        window.addEventListener('resize', () => {
+        this.nextBtns.forEach((btn) => btn.addEventListener("click", () => this.animateTo(this.targetIndex + 1)));
+        this.prevBtns.forEach((btn) => btn.addEventListener("click", () => this.animateTo(this.targetIndex - 1)));
+        this.track.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+            this.onDragStart(e.clientX);
+        });
+        window.addEventListener("mousemove", (e) => this.onDragMove(e.clientX));
+        window.addEventListener("mouseup", () => this.onDragEnd());
+        this.track.addEventListener("touchstart", (e) => this.onDragStart(e.touches[0].clientX), { passive: true });
+        this.track.addEventListener("touchmove", (e) => this.onDragMove(e.touches[0].clientX), { passive: true });
+        this.track.addEventListener("touchend", () => this.onDragEnd());
+        window.addEventListener("resize", () => {
             this.currentIndex = this.clampIndex(this.currentIndex);
             this.targetIndex = this.currentIndex;
             this.setPositionInstant(this.currentIndex);
@@ -137,7 +140,7 @@ const renderSelectedCard = (product, index) => {
     return `
       <div class="selected-card selected-slider__slide" data-slider-slide>
          <div class="selected-card__image">
-            ${product.salesStatus ? '<span class="selected-card__badge">Sale</span>' : ''}
+            ${product.salesStatus ? '<span class="selected-card__badge">Sale</span>' : ""}
             <a class="selected-card__link" href="./html/product-details.html?id=${product.id}">
                <img src="${imageUrl}" alt="${product.name}">
             </a>
@@ -157,7 +160,7 @@ const renderArrivalCard = (product, index) => {
     return `
       <div class="arrival-card arrival-slider__slide" data-slider-slide>
          <div class="arrival-card__image">
-            ${product.salesStatus ? '<span class="arrival-card__badge">Sale</span>' : ''}
+            ${product.salesStatus ? '<span class="arrival-card__badge">Sale</span>' : ""}
             <a class="arrival-card__link" href="./html/product-details.html?id=${product.id}">
                <img src="${imageUrl}" alt="${product.name}">
             </a>
@@ -171,39 +174,35 @@ const renderArrivalCard = (product, index) => {
    `;
 };
 const initHomeProducts = async () => {
-    const selectedTrack = document.getElementById('selected-track');
-    const arrivalTrack = document.getElementById('arrival-track');
+    const selectedTrack = document.getElementById("selected-track");
+    const arrivalTrack = document.getElementById("arrival-track");
     if (!selectedTrack || !arrivalTrack)
         return;
     try {
-        const response = await fetch('./assets/data.json');
+        const response = await fetch("./assets/data.json");
         if (!response.ok)
             throw new Error(`HTTP error: ${response.status}`);
         const rawData = await response.json();
         const products = rawData.data || [];
-        const selectedProducts = pickProducts(products, 'Selected Products', 7);
-        const arrivalProducts = pickProducts(products, 'New Products Arrival', 7);
-        selectedTrack.innerHTML = selectedProducts
-            .map(renderSelectedCard)
-            .join('');
-        arrivalTrack.innerHTML = arrivalProducts
-            .map(renderArrivalCard)
-            .join('');
-        const selectedRoot = selectedTrack.closest('[data-slider]');
-        const arrivalRoot = arrivalTrack.closest('[data-slider]');
+        const selectedProducts = pickProducts(products, "Selected Products", 7);
+        const arrivalProducts = pickProducts(products, "New Products Arrival", 7);
+        selectedTrack.innerHTML = selectedProducts.map(renderSelectedCard).join("");
+        arrivalTrack.innerHTML = arrivalProducts.map(renderArrivalCard).join("");
+        const selectedRoot = selectedTrack.closest("[data-slider]");
+        const arrivalRoot = arrivalTrack.closest("[data-slider]");
         if (selectedRoot)
             new Slider(selectedRoot);
         if (arrivalRoot)
             new Slider(arrivalRoot);
-        selectedTrack.addEventListener('click', (event) => {
+        selectedTrack.addEventListener("click", (event) => {
             const target = event.target;
-            const button = target.closest('.selected-card__btn');
+            const button = target.closest(".selected-card__btn");
             if (!button)
                 return;
             const id = button.dataset.id;
             if (!id)
                 return;
-            const product = selectedProducts.find(item => item.id === id);
+            const product = selectedProducts.find((item) => item.id === id);
             if (!product)
                 return;
             addToCart({
@@ -214,8 +213,8 @@ const initHomeProducts = async () => {
                 size: product.size,
                 color: product.color,
             });
-            const original = button.textContent ?? 'Add To Cart';
-            button.textContent = 'Added ✓';
+            const original = button.textContent ?? "Add To Cart";
+            button.textContent = "Added ✓";
             button.disabled = true;
             window.setTimeout(() => {
                 button.textContent = original;
@@ -224,7 +223,7 @@ const initHomeProducts = async () => {
         });
     }
     catch (error) {
-        console.error('Failed to load home products:', error);
+        console.error("Failed to load home products:", error);
     }
 };
 void initHomeProducts();

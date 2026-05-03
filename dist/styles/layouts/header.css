@@ -13,7 +13,7 @@
   justify-content: center;
   padding: 12px;
   border-radius: 999px;
-  background: #B92770;
+  background: #b92770;
   box-shadow: 0 8px 18px rgba(185, 39, 112, 0.24);
   flex-direction: column;
   gap: 6px;
@@ -88,7 +88,7 @@
   height: 18px;
   padding: 0 4px;
   border-radius: 999px;
-  background: #B92770;
+  background: #b92770;
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -137,10 +137,10 @@
   padding: 15px 16px;
 }
 .nav a.active {
-  color: #B92770;
+  color: #b92770;
 }
 .nav a:hover {
-  color: #B92770;
+  color: #b92770;
 }
 
 @media (max-width: 768px) {
