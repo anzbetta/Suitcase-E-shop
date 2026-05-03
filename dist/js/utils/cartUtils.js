@@ -1,6 +1,6 @@
 export const getCart = () => {
     try {
-        return JSON.parse(localStorage.getItem('cart') || '[]');
+        return JSON.parse(localStorage.getItem('cart') ?? '[]');
     }
     catch {
         return [];

@@ -86,7 +86,7 @@
               <!-- selects -->
               <div class="product__options">
                 <div class="product__option">
-                  <label class="product__option-label">Size</label>
+                  <label class="product__option-label" for="product-size">Size</label>
                   <div class="product__select-wrap">
                     <select class="product__select" id="product-size">
                       <option value="">Choose option</option>
@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="product__option">
-                  <label class="product__option-label">Color</label>
+                  <label class="product__option-label" for="product-color">Color</label>
                   <div class="product__select-wrap">
                     <select class="product__select" id="product-color">
                       <option value="">Choose option</option>
@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="product__option">
-                  <label class="product__option-label">Category</label>
+                  <label class="product__option-label" for="product-category">Category</label>
                   <div class="product__select-wrap">
                     <select class="product__select" id="product-category">
                       <option value="">Choose option</option>
@@ -192,11 +192,11 @@
       <div class="reviews-tab__rate">
         <span class="reviews-tab__rate-label">Rate Product</span>
         <div class="reviews-tab__stars-input" id="star-rating">
-          <span class="star" data-value="1">☆</span>
-          <span class="star" data-value="2">☆</span>
-          <span class="star" data-value="3">☆</span>
-          <span class="star" data-value="4">☆</span>
-          <span class="star" data-value="5">☆</span>
+          <button class="star" type="button" data-value="1" aria-label="Rate 1 star">☆</button>
+          <button class="star" type="button" data-value="2" aria-label="Rate 2 stars">☆</button>
+          <button class="star" type="button" data-value="3" aria-label="Rate 3 stars">☆</button>
+          <button class="star" type="button" data-value="4" aria-label="Rate 4 stars">☆</button>
+          <button class="star" type="button" data-value="5" aria-label="Rate 5 stars">☆</button>
         </div>
       </div>
 
@@ -361,9 +361,9 @@
   </div>
 
   <!-- Login Modal -->
-  <div class="modal" id="login-modal" aria-hidden="true">
+  <dialog class="modal" id="login-modal" aria-hidden="true" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal__overlay" id="modal-overlay"></div>
-    <div class="modal__window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__window">
       <button class="modal__close" id="modal-close" aria-label="Close">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
@@ -426,7 +426,7 @@
 
       </form>
     </div>
-  </div>
+  </dialog>
 
   <script type="module" src="../../dist/js/product.js"></script>
   <script type="module" src="../../dist/js/utils/benefits.js"></script>

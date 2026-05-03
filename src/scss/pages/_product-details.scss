@@ -413,6 +413,9 @@
     gap: 4px;
 
     .star {
+      padding: 0;
+      border: 0;
+      background: none;
       font-size: 20px;
       color: #ddd;
       cursor: pointer;

@@ -10,7 +10,7 @@ export interface CartItem {
 
 export const getCart = (): CartItem[] => {
   try {
-    return JSON.parse(localStorage.getItem('cart') || '[]');
+    return JSON.parse(localStorage.getItem('cart') ?? '[]');
   } catch {
     return [];
   }

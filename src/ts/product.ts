@@ -409,10 +409,10 @@ const initReviewForm = (): void => {
   const nameInput = document.getElementById('review-name') as HTMLInputElement | null;
   const emailInput = document.getElementById('review-email') as HTMLInputElement | null;
   const textInput = document.getElementById('review-text') as HTMLTextAreaElement | null;
-  const success = document.getElementById('review-success') as HTMLElement | null;
-  const errorName = document.getElementById('error-review-name') as HTMLElement | null;
-  const errorEmail = document.getElementById('error-review-email') as HTMLElement | null;
-  const errorText = document.getElementById('error-review-text') as HTMLElement | null;
+  const success = document.getElementById('review-success');
+  const errorName = document.getElementById('error-review-name');
+  const errorEmail = document.getElementById('error-review-email');
+  const errorText = document.getElementById('error-review-text');
 
   if (!nameInput || !emailInput || !textInput || !success || !errorName || !errorEmail || !errorText) {
     return;

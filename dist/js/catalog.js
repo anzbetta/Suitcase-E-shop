@@ -310,7 +310,7 @@ grid.addEventListener('click', (e) => {
         size: product.size,
         color: product.color,
     });
-    const original = btn.textContent || 'Add To Cart';
+    const original = btn.textContent ?? 'Add To Cart';
     btn.textContent = 'Added ✓';
     btn.disabled = true;
     setTimeout(() => {

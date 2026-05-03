@@ -41,11 +41,11 @@ const pickProducts = (products: Product[], block: string, count: number): Produc
 };
 
 class Slider {
-   private track!: HTMLElement;
-   private slides!: HTMLElement[];
-   private nextBtns!: HTMLButtonElement[];
-   private prevBtns!: HTMLButtonElement[];
-   private totalSlides!: number;
+   private readonly track!: HTMLElement;
+   private readonly slides!: HTMLElement[];
+   private readonly nextBtns!: HTMLButtonElement[];
+   private readonly prevBtns!: HTMLButtonElement[];
+   private readonly totalSlides!: number;
 
    private currentIndex = 0;
    private targetIndex = 0;
@@ -58,7 +58,7 @@ class Slider {
 
    private readonly DRAG_THRESHOLD = 50;
 
-   constructor(private root: HTMLElement) {
+   constructor(private readonly root: HTMLElement) {
       const track = root.querySelector<HTMLElement>('[data-slider-track]');
       if (!track) {
          console.warn('Slider: [data-slider-track] not found in', root);
@@ -275,7 +275,7 @@ const initHomeProducts = async (): Promise<void> => {
             color: product.color,
          });
 
-         const original = button.textContent || 'Add To Cart';
+         const original = button.textContent ?? 'Add To Cart';
          button.textContent = 'Added ✓';
          button.disabled = true;
          window.setTimeout(() => {

@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-slider]').forEach(root => {
         if (root.dataset.sliderDynamic === 'true')
             return;
-        new Slider(root);
+        const slider = new Slider(root);
+        void slider;
     });
     const header = document.querySelector('.header');
     const burgerButton = document.querySelector('.header__burger');
@@ -37,8 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // Intercept internal link clicks and play a fade-out transition
     document.addEventListener('click', (event) => {
-        const target = event.target;
-        const anchor = target.closest('a');
+        if (!(event.target instanceof Element))
+            return;
+        const anchor = event.target.closest('a');
         if (!anchor)
             return;
         if (anchor.target === '_blank' || anchor.hasAttribute('download'))

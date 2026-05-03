@@ -44,8 +44,8 @@ const initCartPage = async () => {
     <div class="cart-row"
       data-id="${item.id}"
       data-name="${item.name}"
-      data-size="${item.size || ''}"
-      data-color="${item.color || ''}">
+      data-size="${item.size ?? ''}"
+      data-color="${item.color ?? ''}">
 
       <div class="cart-row__image">
         <img src="${resolveCartImage(item.image, index)}" alt="${item.name}">
@@ -159,20 +159,20 @@ const initCartPage = async () => {
         if (!row)
             return;
         const name = row.dataset.name;
-        const size = row.dataset.size || '';
-        const color = row.dataset.color || '';
+        const size = row.dataset.size ?? '';
+        const color = row.dataset.color ?? '';
         const action = target.closest('[data-action]')?.dataset.action;
         if (!action)
             return;
         let cart = getCart();
         // знаходимо по name + size + color (merge логіка — пункти 50, 51)
         const findItem = (c) => c.find(i => i.name === name &&
-            (i.size || '') === size &&
-            (i.color || '') === color);
+            (i.size ?? '') === size &&
+            (i.color ?? '') === color);
         if (action === 'delete') {
             cart = cart.filter(i => !(i.name === name &&
-                (i.size || '') === size &&
-                (i.color || '') === color));
+                (i.size ?? '') === size &&
+                (i.color ?? '') === color));
         }
         if (action === 'inc') {
             const item = findItem(cart);

@@ -2,8 +2,10 @@
 @use './abstracts/variables';
 @use './layouts/header';
 @use './layouts/footer';
+@use './base/fonts';
 @use './base/base';
 @use './components/buttons';
+@use './components/product-card';
 
 
 
@@ -73,9 +75,22 @@ body.no-scroll {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: auto;
+	height: auto;
+	max-width: none;
+	max-height: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: inherit;
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.25s ease, visibility 0.25s;
+
+	&::backdrop {
+		background: transparent;
+	}
 
 	&.is-open {
 		opacity: 1;

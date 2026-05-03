@@ -39,7 +39,7 @@ const initAboutPage = (): void => {
 
 	document.addEventListener('click', (event: MouseEvent) => {
 		const target = event.target as HTMLElement;
-		const anchor = target.closest('a') as HTMLAnchorElement | null;
+		const anchor = target.closest('a');
 
 		if (!anchor) return;
 		if (anchor.target === '_blank' || anchor.hasAttribute('download')) return;

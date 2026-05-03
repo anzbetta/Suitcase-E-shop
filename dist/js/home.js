@@ -222,7 +222,7 @@ const initHomeProducts = async () => {
                 size: product.size,
                 color: product.color,
             });
-            const original = button.textContent || 'Add To Cart';
+            const original = button.textContent ?? 'Add To Cart';
             button.textContent = 'Added ✓';
             button.disabled = true;
             window.setTimeout(() => {

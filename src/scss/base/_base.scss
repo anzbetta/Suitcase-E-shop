@@ -2,7 +2,6 @@
 @use '../abstracts/variables' as *;
 
 body {
-  font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   &.page-transition {
     opacity: 1;

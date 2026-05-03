@@ -52,8 +52,8 @@ const initCartPage = async (): Promise<void> => {
     <div class="cart-row"
       data-id="${item.id}"
       data-name="${item.name}"
-      data-size="${item.size || ''}"
-      data-color="${item.color || ''}">
+      data-size="${item.size ?? ''}"
+      data-color="${item.color ?? ''}">
 
       <div class="cart-row__image">
         <img src="${resolveCartImage(item.image, index)}" alt="${item.name}">
@@ -91,7 +91,7 @@ const initCartPage = async (): Promise<void> => {
     const discount = hasDiscount ? Math.round(subtotal * DISCOUNT_RATE) : 0;
     const total = subtotal - discount + SHIPPING;
 
-    cartSummary!.innerHTML = `
+    cartSummary.innerHTML = `
       <div class="cart-summary__row">
         <span>Sub Total</span>
         <span>$${subtotal}</span>
@@ -120,8 +120,8 @@ const initCartPage = async (): Promise<void> => {
     if (cartTable) cartTable.style.display = 'none';
     if (cartBottom) cartBottom.style.display = 'none';
 
-    cartEmpty!.style.display = 'block';
-    cartEmpty!.innerHTML = `
+    cartEmpty.style.display = 'block';
+    cartEmpty.innerHTML = `
       <p>${message}</p>
       <a href="catalog.html" class="cart-actions__btn cart-actions__btn--fill">
         Go to Catalog
@@ -151,9 +151,9 @@ const initCartPage = async (): Promise<void> => {
 
     if (cartTable) cartTable.style.display = '';
     if (cartBottom) cartBottom.style.display = '';
-    cartEmpty!.style.display = 'none';
+    cartEmpty.style.display = 'none';
 
-    cartBody!.innerHTML = cart.map(renderRow).join('');
+    cartBody.innerHTML = cart.map(renderRow).join('');
     renderSummary(cart);
   };
 
@@ -176,8 +176,8 @@ const initCartPage = async (): Promise<void> => {
     if (!row) return;
 
     const name = row.dataset.name as string;
-    const size = row.dataset.size || '';
-    const color = row.dataset.color || '';
+    const size = row.dataset.size ?? '';
+    const color = row.dataset.color ?? '';
     const action = target.closest<HTMLElement>('[data-action]')?.dataset.action;
     if (!action) return;
 
@@ -188,8 +188,8 @@ const initCartPage = async (): Promise<void> => {
       c.find(
         i =>
           i.name === name &&
-          (i.size || '') === size &&
-          (i.color || '') === color
+          (i.size ?? '') === size &&
+          (i.color ?? '') === color
       );
 
     if (action === 'delete') {
@@ -197,8 +197,8 @@ const initCartPage = async (): Promise<void> => {
         i =>
           !(
             i.name === name &&
-            (i.size || '') === size &&
-            (i.color || '') === color
+            (i.size ?? '') === size &&
+            (i.color ?? '') === color
           )
       );
     }

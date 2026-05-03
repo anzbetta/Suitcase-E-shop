@@ -200,8 +200,8 @@
             </div>
 
             <!-- sidebar -->
-            <aside class="catalog-sidebar">
-              <h3 class="catalog-sidebar__title">Top Best Sets</h3>
+            <aside class="catalog-sidebar" aria-labelledby="catalog-sidebar-title">
+              <h3 class="catalog-sidebar__title" id="catalog-sidebar-title">Top Best Sets</h3>
               <div class="catalog-sidebar__list" id="sidebar-list">
                 <!-- JS рендерить -->
               </div>
@@ -209,9 +209,9 @@
 
           </div>
 
-          <aside class="catalog-sidebar catalog-sidebar--mobile" data-slider>
+          <aside class="catalog-sidebar catalog-sidebar--mobile" aria-labelledby="catalog-sidebar-mobile-title" data-slider>
             <div class="catalog-sidebar__top">
-              <h3 class="catalog-sidebar__title">Top Best Sets</h3>
+              <h3 class="catalog-sidebar__title" id="catalog-sidebar-mobile-title">Top Best Sets</h3>
               <div class="slider-controls slider-controls--mobile catalog-sidebar__controls">
                 <button class="slider-btn" type="button" aria-label="Previous slide" data-slider-prev>
                   <svg viewBox="0 0 24 24" fill="none">
@@ -376,9 +376,9 @@
   </div>
 
   <!-- Login Modal -->
-  <div class="modal" id="login-modal" aria-hidden="true">
+  <dialog class="modal" id="login-modal" aria-hidden="true" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal__overlay" id="modal-overlay"></div>
-    <div class="modal__window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__window">
       <button class="modal__close" id="modal-close" aria-label="Close">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
@@ -441,7 +441,7 @@
 
       </form>
     </div>
-  </div>
+  </dialog>
 
   <script type="module" src="../../dist/js/catalog.js"></script>
 </body>

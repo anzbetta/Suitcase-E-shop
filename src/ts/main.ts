@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
    // знаходить всі слайдери на сторінці і ініціалізує кожен
    document.querySelectorAll<HTMLElement>('[data-slider]').forEach(root => {
       if (root.dataset.sliderDynamic === 'true') return;
-      new Slider(root);
+      const slider = new Slider(root);
+      void slider;
    });
 
    const header = document.querySelector<HTMLElement>('.header');
@@ -45,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
    // Intercept internal link clicks and play a fade-out transition
    document.addEventListener('click', (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      const anchor = target.closest('a') as HTMLAnchorElement | null;
+      if (!(event.target instanceof Element)) return;
+      const anchor = event.target.closest('a');
 
       if (!anchor) return;
       if (anchor.target === '_blank' || anchor.hasAttribute('download')) return;

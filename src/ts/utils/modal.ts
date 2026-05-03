@@ -3,6 +3,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const initLoginModal = (): void => {
   const modal = document.getElementById('login-modal');
   if (!modal) return;
+  const dialog = modal instanceof HTMLDialogElement ? modal : null;
 
   if (modal.getAttribute('data-initialized') === 'true') return;
   modal.setAttribute('data-initialized', 'true');
@@ -13,25 +14,38 @@ export const initLoginModal = (): void => {
   const form = document.getElementById('login-form') as HTMLFormElement | null;
   const emailInput = document.getElementById('login-email') as HTMLInputElement | null;
   const passwordInput = document.getElementById('login-password') as HTMLInputElement | null;
-  const emailError = document.getElementById('error-login-email') as HTMLElement | null;
-  const passwordError = document.getElementById('error-login-password') as HTMLElement | null;
-  const success = document.getElementById('login-success') as HTMLElement | null;
+  const emailError = document.getElementById('error-login-email');
+  const passwordError = document.getElementById('error-login-password');
+  const success = document.getElementById('login-success');
   const togglePassword = document.getElementById('toggle-password') as HTMLButtonElement | null;
 
   if (!form || !emailInput || !passwordInput || !emailError || !passwordError || !success) return;
+
+  const syncClosedState = (): void => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+  };
 
   const openModal = (): void => {
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('no-scroll');
     success.style.display = 'none';
+
+    if (dialog && !dialog.open) {
+      dialog.showModal();
+    }
+
     emailInput.focus();
   };
 
   const closeModal = (): void => {
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('no-scroll');
+    if (dialog?.open) {
+      dialog.close();
+    }
+
+    syncClosedState();
   };
 
   const showEmailError = (message: string): void => {
@@ -103,6 +117,11 @@ export const initLoginModal = (): void => {
 
   overlay?.addEventListener('click', closeModal);
   closeButton?.addEventListener('click', closeModal);
+  dialog?.addEventListener('cancel', (event) => {
+    event.preventDefault();
+    closeModal();
+  });
+  dialog?.addEventListener('close', syncClosedState);
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeModal();
